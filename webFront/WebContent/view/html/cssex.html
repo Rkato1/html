@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css예시</title>
+    <style>
+        
+        .c_red{
+            color:red;
+        }
+        #bg_yel{
+            background: yellow;
+        }
+        .c_blueNbg_gray{
+            color: blue;
+            background: gray;
+        }
+        .c_orange{
+            color: orange;
+        }
+        input[name=id]{
+            color:red;
+        }
+        input[type=password]{
+            background: aqua;
+        }
+        /*자손*/
+        #d1>h1{
+            background: red;
+        }
+        #d1>*{
+            color: green;
+        }
+        /*후손*/
+        #d1 li{
+            color: blue;
+            background: yellow;
+        }
+    </style>
+</head>    
+<body>
+<h1>CSS 기본 선택자</h1>
+    <br>
+    <pre class="c_red">선택자란?<br>특정한 HTML 태그를 선택할 때 사용하는 기능으로, 태그를 선택하여 원하는 스타일과 기능을 적용할 수 있다.</pre>
+    <hr>
+    <h1>모든 선택자</h1>
+    <pre class="c_red">HTML 문서 안의 모든 태그를 선택할때 전체 선택자를 사용할 수 있다.</pre>
+    <ul>
+    <li>테스트1</li>
+    <li>테스트2</li>
+    <li>테스트3</li>    
+    </ul>
+    <hr>
+    <h1>태그 선택자</h1>
+    <pre class="c_red">HTML 문서 내에 같은 태그를 모두 선택할 때 사용한다.</pre>
+    <p>- p {color : red;} 와 같은 형태로 사용된다.</p>
+    <hr>
+    <h1>아이디 선택자</h1>
+    <pre class="c_red">HTML 문서 내에 해당하는 아이디 속성의 값을 가진 태그만 선택할 때 사용한다.</pre>
+    <p>- #아이디명 {color : blue;} 와 같은 형태로 사용된다.</p>
+    <ol type="1">
+        <li>아이디 선택자 테스트1</li>
+        <li id="bg_yel">아이디 선택자 테스트2</li>
+        <li>아이디 선택자 테스트3</li>
+        <li>아이디 선택자 테스트4</li>
+        <li>아이디 선택자 테스트5</li>
+    </ol>
+    <hr>
+    <h1>클래스 선택자</h1>
+    <pre class="c_red">HTML 문서 내에 여러 개의 태그를 동일한 클래스명으로 지정하여 선택할 때 사용한다.</pre>
+    <p>- .클래스명 {color : purple;} 와 같은 형태로 사용된다.</p>
+    <ul>
+        <li class="c_blueNbg_gray">클래스 선택자 테스트1</li>
+        <li class="c_orange">클래스 선택자 테스트2</li>
+        <li class="c_blueNbg_gray">클래스 선택자 테스트3</li>
+        <li class="c_orange">클래스 선택자 테스트4</li>
+        <li class="c_blueNbg_gray">클래스 선택자 테스트5</li>
+    </ul>
+    
+    <div id="d1">
+        <h1>#d1자손</h1>
+        <h2>#d1자손</h2>
+        <ul>
+            <li>#d1후손<a href="#">aaa</a></li>
+            <li>#d1후손</li>
+        </ul>
+    </div>
+    <hr><hr><hr>
+    <style>
+        /*동위연산자 +는 바로 다음*/
+        #div-test>h2+h3{
+            color:darkkhaki;
+        }
+        /* ~ 는 전부다*/
+        #div-test>h2~p{
+            color:white;
+        }
+    </style>
+    <div id="div-test">
+        <h2>자손0</h2>
+        <h3>자손1</h3>
+        <h3>자손2</h3>
+        <p>자손3</p>
+        <p>자손4</p>
+    </div>
+    <hr><hr><hr>
+    <style>
+        #div-test1>p{
+            color:white;
+            background: black;
+        }
+        #div-test1>p:hover{
+            color:aqua;
+            background: coral;
+            cursor: pointer;
+        }
+    </style>
+    <div id="div-test1">        
+        <p>Test Msg</p>
+        <p>Test Msg</p>
+        <p>Test Msg</p>
+        <p>Test Msg</p>
+        <p>Test Msg</p>
+    </div>
+    
+    <a href="test.html">클릭</a>
+</body>
+</html>

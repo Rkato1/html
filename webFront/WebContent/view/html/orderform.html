@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    고객명 : <input type="text"><br>
+    전화번호 : <input type="tel"><br>
+    E-mail : <input type="email"><br>
+    <fieldset>
+        <legend>피자 사이즈</legend>
+        <input type="radio" name="a">Small<br>
+        <input type="radio" name="a">Medium<br>
+        <input type="radio" name="a">Large<br>
+    </fieldset>
+    
+    <fieldset>
+        <legend>토핑선택</legend>
+        <input type="checkbox" name="b">베이컨<br>
+        <input type="checkbox" name="b">치즈<br>
+        <input type="checkbox" name="b">양파<br>
+        <input type="checkbox" name="b">버섯<br>
+    </fieldset>
+    희망배송시간 : <input type="time"><br>
+    배송시 요청사항 : <textarea rows="3" cols="15"></textarea>
+    <br>
+    <input type="submit" value="주문하기">
+    
+    <fieldset>
+        <legend>납품자정보</legend>
+        1. 납품자명:<input type="text" placeholder="name"><br>
+        2. email:<input type="text" placeholder="answs@naver.com"><br>
+        3. 홈페이지:<input type="text" placeholder="http://"><br>
+    </fieldset>
+    <fieldset>
+        <legend>납품정보</legend>
+        <ul>
+            <li>납품자명:<input type="text"></li><br>
+            <li>납품수량:<input type="number" placeholder="최소100"></li><br>
+            <li>납품등급:<input type="range" min="1" max="5"></li><br>
+            <li>기타사항:<textarea rows="3" cols="15"></textarea></li><br>
+        </ul>
+    </fieldset>
+    <hr>
+    <input type="button" value="send message" onclick="alert(order finish);">
+</body></html>

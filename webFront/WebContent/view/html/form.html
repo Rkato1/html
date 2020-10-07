@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>form태그</title>
+</head>
+
+<body>
+    form.html
+    <!--post 노출안함,보안강점 get 노출함,보안취약-->
+    <!--form action="actionPage.html" method="get"-->
+    <!--required 반드시 입력되어야하는 정보-->
+    <form action="actionPage.html" method="get">
+        <fieldset>
+            <legend>로그인 정보</legend>
+            ID : <input type="text" name="id" required><br>
+            PW : <input type="password" name="pw"><br>
+            <input type="submit" value="로그인">
+            <input type="reset" value="취소">
+        </fieldset>
+    </form>
+    <hr>
+    <input type="text" placeholder="테스트중임 흐린글씨">
+    <input type="text" value="테스트">
+    <input type="text" value="읽기전용" readonly>
+    <input type="text" size="5" maxlength="20">
+    <br><br><br>
+    <form action="inputType.html" method="get" autocomplete="off">
+        <label for ="a">text</label> : <input type="text" name="a"><br>
+        pw : <input type="password" name="b"><br>
+        hidden : <input type="hidden" name="c" value="hiddendata"><br>
+        file : <input type="file" name="d" multiple><br>
+        <!--name이 같으면 하나만 선택-->
+        radio : <label><input type="radio" name="e">남</label><label><input type="radio" name="e">여</label>
+        <br>
+        chkbox : <input type="checkbox" name="f">취미1 <input type="checkbox" name="f">취미2 <input type="checkbox" name="f">취미3
+        <br>
+        <input type="submit" value="제출하기">
+        <input type="reset" value="초기화">
+        <input type="button" value="기능용버튼" onclick="alert(11111);">
+    </form>
+    
+    <hr><hr><hr>
+    <form action="html5type.html" method="get">
+        color : <input type="color" name="a"><br>
+        date : <input type="date" name="b"><br>
+        datetime-local : <input type="datetime-local" name="c"><br>
+        time : <input type="time" name="d"><br>
+        number : <input type="number" name="e" min=0 max=15 step="3"><br>
+        range : <input type="range" min=0 max=10 step="2" value="1"><br>
+        search : <input type="search"><br>
+        url : <input type="url"><br>
+        email : <input type="email"><br>
+        <input type="submit" value="제출">
+        <select>
+            <option>1번째</option>
+            <option>2번째</option>
+            <option>3번째</option>
+            <option>4번째</option>
+        </select>
+        <br>
+        <textarea name="content" rows="10" cols="20" style="resize:none"></textarea>
+    </form>
+</body></html>
