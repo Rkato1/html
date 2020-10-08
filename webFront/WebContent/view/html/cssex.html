@@ -1,54 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>css예시</title>
+    <meta charset="UTF-8">
+    <title>css예시</title>
     <style>
-        
-        .c_red{
-            color:red;
+        .c_red {
+            color: red;
         }
-        #bg_yel{
+
+        #bg_yel {
             background: yellow;
         }
-        .c_blueNbg_gray{
+
+        .c_blueNbg_gray {
             color: blue;
             background: gray;
         }
-        .c_orange{
+
+        .c_orange {
             color: orange;
         }
-        input[name=id]{
-            color:red;
+
+        input[name=id] {
+            color: red;
         }
-        input[type=password]{
+
+        input[type=password] {
             background: aqua;
         }
+
         /*자손*/
-        #d1>h1{
+        #d1>h1 {
             background: red;
         }
-        #d1>*{
+
+        #d1>* {
             color: green;
         }
+
         /*후손*/
-        #d1 li{
+        #d1 li {
             color: blue;
             background: yellow;
         }
     </style>
-</head>    
+</head>
+
 <body>
-<h1>CSS 기본 선택자</h1>
+    <h1>CSS 기본 선택자</h1>
     <br>
     <pre class="c_red">선택자란?<br>특정한 HTML 태그를 선택할 때 사용하는 기능으로, 태그를 선택하여 원하는 스타일과 기능을 적용할 수 있다.</pre>
     <hr>
     <h1>모든 선택자</h1>
     <pre class="c_red">HTML 문서 안의 모든 태그를 선택할때 전체 선택자를 사용할 수 있다.</pre>
     <ul>
-    <li>테스트1</li>
-    <li>테스트2</li>
-    <li>테스트3</li>    
+        <li>테스트1</li>
+        <li>테스트2</li>
+        <li>테스트3</li>
     </ul>
     <hr>
     <h1>태그 선택자</h1>
@@ -76,7 +85,7 @@
         <li class="c_orange">클래스 선택자 테스트4</li>
         <li class="c_blueNbg_gray">클래스 선택자 테스트5</li>
     </ul>
-    
+
     <div id="d1">
         <h1>#d1자손</h1>
         <h2>#d1자손</h2>
@@ -85,15 +94,18 @@
             <li>#d1후손</li>
         </ul>
     </div>
-    <hr><hr><hr>
+    <hr>
+    <hr>
+    <hr>
     <style>
         /*동위연산자 +는 바로 다음*/
-        #div-test>h2+h3{
-            color:darkkhaki;
+        #div-test>h2+h3 {
+            color: darkkhaki;
         }
+
         /* ~ 는 전부다*/
-        #div-test>h2~p{
-            color:white;
+        #div-test>h2~p {
+            color: white;
         }
     </style>
     <div id="div-test">
@@ -103,26 +115,158 @@
         <p>자손3</p>
         <p>자손4</p>
     </div>
-    <hr><hr><hr>
+    <hr>
+    <hr>
+    <hr>
     <style>
-        #div-test1>p{
-            color:white;
+        #div-test1>p {
+            color: white;
             background: black;
         }
-        #div-test1>p:hover{
-            color:aqua;
+
+        #div-test1>p:hover {
+            color: aqua;
             background: coral;
             cursor: pointer;
         }
     </style>
-    <div id="div-test1">        
+    <div id="div-test1">
         <p>Test Msg</p>
         <p>Test Msg</p>
         <p>Test Msg</p>
         <p>Test Msg</p>
         <p>Test Msg</p>
     </div>
-    
+
     <a href="test.html">클릭</a>
-</body>
-</html>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <style>
+        p[id="12px"] {
+            font-size: 12px;
+        }
+
+        #bg_yelNc_red {
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+    <h1>기본 속성 선택자</h1>
+    <p>기본 석택자 뒤에 []를 사용하여 속성과 속성값을 사용한다.</p>
+    <p id="12px">선택자[속성=속성값] {설정내용} 의 형식으로 사용된다.</p>
+    <div id="bg_yelNc_red"> div 1</div>
+    <div id="bg_yelNc_red"> div 2</div>
+    <div id="bg_yelNc_red"> div 3</div>
+    <div id="bg_yelNc_red"> div 4</div>
+    <hr>
+    <style>
+        div[id="bg_red"] {
+            background: red;
+        }
+
+        div>ul {
+            background: yellow;
+            color: red;
+        }
+        
+        div li{
+            background-color: lightskyblue;
+        }
+    </style>
+    <h1>후손선택자와 자손선택자</h1>
+    <p>자손선택자 : 바로 아래의 요소, 후손선택자 : 하위 요소 전부</p>
+    <p id="12px">자손선택자 : 선택자>자손선택자{설정내용} 의 형식으로 사용, 후손선택자 : 선택자 후손선택자{설정내용}으로 사용</p>
+    <div id="bg_red">자손입니다</div>
+    <br>
+    <div id="bg_red"> 나도 자손입니다
+        <ul>
+            <legend>리스트</legend>
+            <li id="bg_sbNcol_red">나는 ul의 자손이면서 동시에 div의 후손입니다.</li>
+            <li id="bg_sbNcol_red">나도 ul의 자손이면서 동시에 div의 후손입니다.</li>
+        </ul>
+    </div>
+    <hr>
+    <style>
+        #dred{
+            background-color: red;
+        }        
+        #test>p~p{
+            color:white;
+            background-color: orangered;
+        }
+        /*
+        같은뜻
+        #test>#dred~p{
+            color:white;
+            background-color: orangered;
+        }
+        */
+    </style>
+    <h1>동위선택자</h1>
+    <p>동위 관계에서 뒤에 위치한 태그를 선택할 때 사용한다.</p>
+    <p id="12px">바로 뒤의 요소 선택시 : 선택자a + 선택자b {설정내용}으로 사용하며, 뒤에있는 모두를 선택할 때는 선택자a ~ 선택자b {설정내용} 으로 사용된다.</p>
+    <div id="test">
+        <p id="dred">div test1</p>
+        <p>div test2<br>div test3<br>div test4<br>div test5</p>
+    </div>
+    <hr>
+    <style>
+        .square{
+            height: 300px;
+            width: 300px;
+            background-color: orangered;
+            color:white;
+        }
+        #shover:hover{
+            height: 200px;
+            width: 200px;
+            background-color: cyan;
+            color:black;
+        }
+    </style>
+    <h1>반응선택자</h1>
+    <p>사용자의 움직임에 따라 달라지는 선택자</p>
+    <p id="12px">사용자가 클릭한 태그 : 선택자:active{설정내용}, 사용자의 마우스가 올라가 있는 태그 : 선택자:hover{설정내용}으로 사용된다.</p>
+    <div class="square" id="sactive">active 테스트</div><br>
+    <div class="square" id="shover">hover 테스트</div>
+    <hr>
+    <style>
+        input[type=radio]:checked{
+            width: 30px;
+            height: 30px;
+        }
+        input[name="textbox"]:focus{
+            background-color: red;
+        }
+        select[name="age"]>option:enabled{
+            background-color:bisque;
+            color:purple;
+        }
+        select[name="age"]>option:disabled{
+            background-color:black;
+            color:white;
+        }
+    </style>
+    <h1>상태선택자</h1>
+    <p>입력양식의 상태에 따라 선택되는 선택자</p>
+    <p id="12px">체크 상태의 input태그 선택 : input태그:checked{설정내용}</p>
+    <input type="radio" name="rtest">사과
+    <input type="radio" name="rtest">바나나
+    <input type="radio" name="rtest">배
+    <p id="12px">초점이 맞추어진 input태그 선택</p>
+    <p>아이디 : <input type="text" placeholder="아이디를 입력하세요" name="textbox"></p>
+    <p>패스워드 : <input type="password" placeholder="비밀번호를 입력하세요" name="textbox"></p>
+    <p id="12px">사용 가능한 input태그 선택 : input태그:enalbed{설정내용}, 사용 불가능한 input태그 선택 : input태그:disable{설정내용}</p>
+    <h1>당신의 연령대는?</h1>
+    <select name="age">
+        <option disabled>10대</option>
+        <option>20대</option>
+        <option>30대</option>
+        <option>40대</option>
+        <option>50대</option>
+        <option>60대</option>
+    </select>
+</body></html>

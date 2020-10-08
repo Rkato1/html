@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Font Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
+    <style>
+        #c1{
+            color:blue;
+        }
+        #c2{
+            color:rgb(255,0,255);
+        }
+        #c3{
+            color: #f099ff;
+        }
+        #c4{
+            color:rgba(128,128,128,0.1);
+        }
+        
+        /*없을 떄에 대비해서 써둠,3개까지 가능 다 없으면 기본체*/
+        #p1{
+            font-family: "궁서체","고딕체","바탕체";
+        }
+        #p2{
+            font-family: "굴림체";
+            font-weight: 900;
+            font-weight: bold;
+            font-weight: bolder;            
+        }
+        #p3{
+            font-family: "바탕체";
+            font-size:2em;
+            font-weight: lighter;
+        }
+        #p4{
+            font-family: 'Nanum Pen Script', cursive;
+            font-size:50px;
+        }
+        
+        #p6{
+            font-variant: normal;
+            font-style: oblique;
+            /*문자 자체를 기울이는 방식*/
+        }
+        #p7{
+            font-variant: small-caps;
+        }
+        #p8{
+            font-variant: inherit;
+            font-style: italic;
+            /*기울어진 문자를 가져다 사용하는 방식*/
+        }
+        #p9{
+            /*뒤 2개는 필수사항*/
+            font: italic bold 20px "궁서체";
+        }
+    </style>    
+</head>
+<body>
+    <!--h1 id="c1">색상테스트1</h1>
+    <h1 id="c2">색상테스트2</h1>
+    <h1 id="c3">색상테스트3</h1>
+    <h1 id="c4">색상테스트4</h1>    
+    <hr>
+    <p id="p1">글꼴테스트1</p>
+    <p id="p2">글꼴테스트2</p>
+    <p id="p3">글꼴테스트3</p>
+    <p id="p4">글꼴테스트4</p>
+    
+    <p id="p6">I Love You</p>
+    <p id="p7">I Love You</p>
+    <p id="p8">I Love You</p>
+    
+    <p id="p9">폰트테스트</p-->
+    
+    <style>
+        p{
+            font-size: 10px;
+        }
+        #goong{
+            font-family: "궁서체";
+        }
+        #godic{
+            font-family: "고딕체";
+        }
+        #none{
+            font-family: "none";
+        }
+        #webfont{
+            font-family: 'Modak', cursive;
+        }
+    </style>
+    <h1>글꼴 관련 스타일</h1>
+    <hr>
+    <div>
+        <h3>font-family 속성 : 텍스트의 글꼴을 지정할 때 사용한다.</h3>
+        <p id="10px">선택자 { font-family : 글꼴이름; }의 형식으로 사용된다.</p>
+        <div id="goong">글꼴 변경 테스트1(궁서체)</div>
+        <div id="godic">글꼴 변경 테스트2(고딕체)</div>
+        <div id="none">글꼴 변경 테스트3(없는 글꼴)</div>
+        <h4>** 웹 폰트 사용하는 방법</h4>
+        <div>웹 폰트 제공 사이트 예시 : <a href="https://fonts.google.com/">구글 웹 폰트 사이트로</a></div>
+        <div id="webfont">font style test(Modak)</div>
+    </div>
+    <hr>
+    <style>
+        p{
+            font-size: 10px;
+        }
+        #fixed{
+            font-size: 30px;
+        }
+        #change{
+            font-size: 50%;
+        }
+    </style>
+    <div>
+        <h3>font-size 속성 : 텍스트의 크기를 변경할 때 사용한다.</h3>
+        <p id="10px">선택자 { font-size : 크기; }의 형식으로 사용된다.</p>
+        <ul>
+            <li id="fixed">고정 크기 px 테스트</li>
+            <li id="change">가변크기 % 테스트</li>
+        </ul>
+    </div>
+    <hr>
+    <style>
+        p{
+            font-size: 10px;
+        }
+        #bold{
+            font-weight: bold;
+        }
+        #lighter{
+            font-weight: lighter;
+        }
+        #bolder{
+            font-weight: bolder;
+        }
+    </style>
+    <div>
+        <h3>font-weight 속성 : 두꺼운 글씨를 표현할 때 사용한다.</h3>
+        <p id="10px">선택자 { font-weight : normal | bold | bolder | lighter | 100 | 400 | 900; }의 형식으로 사용된다.</p>
+        <ul>
+            <li id="bold">굵은 글꼴</li>
+            <li id="lighter">원래보다 가늘게</li>
+            <li id="bolder">원래보다 굵게</li>
+        </ul>
+    </div>
+    <hr>
+    <style>
+        p{
+            font-size: 10px;
+        }
+        #ori{
+            font-variant: normal;
+        }
+        #change{
+            font-variant: small-caps;
+            font-size: 15px;
+        }
+    </style>
+    <div>
+        <h3>font-variant 속성 : 작은 대문자로 변경할 때 사용한다.</h3>
+        <p id="10px">선택자 { font-variant : 속성값; }의 형식으로 사용된다.</p>
+        <div id="ori">I Love You</div>
+        <div id="change">I Love You</div>
+    </div>
+    <hr>
+    <style>
+        p{
+            font-size: 10px;
+        }
+        #italic{
+            font-style: italic;
+        }
+        #oblique{
+            font-style: oblique;
+        }
+    </style>
+    <div>
+        <h3>font-style 속성 : 텍스트의 기울임을 지정할 때 사용한다.</h3>
+        <p id="10px">선택자 { font-style : normal | italic | oblique; }의 형식으로 사용된다.</p>
+        <div id="italic">italic</div>
+        <div id="oblique">oblique</div>
+    </div>
+    <hr>
+    <style>
+        p{
+            font-size: 10px;
+        }
+        #test1{
+            font: 16px "궁서체";
+        }
+        #test2{
+            font: italic bold 20px "고딕체";
+        }
+    </style>
+    <div>
+        <h3>font 속성 : 글꼴 관련 스타일을 한번에 지정할 때 사용한다.</h3>
+        <p id="10px">선택자 { font : font-style font-variant font-weight font-size/line-height font-famliy; }의 형식으로 사용된다.</p>
+        <div id="test1">글꼴 관련 스타일 테스트1 (16px 궁서체)</div>
+        <div id="test2">글꼴 관련 스타일 테스트2 (italic bold 20px 고딕체)</div>
+    </div>
+</body>
+</html>

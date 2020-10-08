@@ -38,5 +38,45 @@
     <p id="idtest">pppp</p>
     <div>divdiv</div>
     <p>ppppppppppppppppp</p>
+    <hr>
+    <style>
+        input[type=radio]:checked{
+            width: 20px;
+            height: 20px;
+        }
+        input[name=hobby]:checked{
+            width: 30px;
+            height: 30px;
+        }
+        input[name=id]:focus{
+            background-color: skyblue;
+        }
+        select[name=age]>option:disabled{
+            color:white;
+            background-color: cyan;
+        }
+        select[name=age]>option:enabled{
+            color:yellow;
+            background-color: violet;
+        }
+    </style>
+    <input type="text" name="id" placeholder="아이디입력"><br>
+    <input type="password" name="pw" placeholder="비밀번호입력"><br>
+    <input type="radio" name="gender">남
+    <input type="radio" name="gender">여
+    <br>
+    <input type="checkbox" name="hobby">독서
+    <input type="checkbox" name="hobby">운동
+    <input type="checkbox" name="hobby">공부
+    <br>
+    <select name="age">
+        <!--눈에는 보이지만 활성화하지 않겠다-->
+        <option disabled>10대</option>
+        <option>20대</option>
+        <option>30대</option>
+        <option>40대</option>
+        <option>50대</option>
+        <option>60대</option>
+    </select>
 </body>
 </html>

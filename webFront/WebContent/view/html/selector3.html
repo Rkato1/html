@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>selector3</title>
+    <style>
+        
+        /*우선순위*/
+        /*태그 내 직접->class->id->인라인->!important*/
+        /*동일한 경우엔 가장 마지막에 지정된 값이 적용됨*/
+                
+        /*형제 관계 태그 중 첫 번째 태그 선택*/
+        #test1 p:first-child {
+            background: red;
+            color: white;
+        }
+
+        /*형제 관계 태그 중 마지막 태그(위치로만찾음) 선택*/
+        #test1 p:last-child {
+            background: orange;
+            color: white;
+        }
+
+        /*형제 관계 태그 중 앞에서 수열번째 태그(배수) 선택*/
+        #test1 p:nth-child(2n) {
+            background: aqua;
+            color: black;
+        }
+
+        /*형제 관계 태그 중 앞에서 n번째 태그 선택*/
+        #test1 p:nth-child(3) {
+            background: aqua;
+            color: black;
+        }
+
+        /*형제 관계 태그 중 밑에서 n번째 태그 선택*/
+        #test1 p:nth-last-child(2) {
+            background: chocolate;
+            color: black;
+        }
+
+        /*타입으로 구분*/
+        #test2 p:first-of-type {
+            background: red;
+            color: white;
+        }
+
+        #test2 p:last-of-type {
+            background: orange;
+            color: white;
+        }
+
+        #test2 p:nth-of-type(2n) {
+            background: aqua;
+            color: black;
+        }
+
+        #test2 p:nth-of-type(3) {
+            background: chocolate;
+            color: black;
+        }
+
+        #test2 p:nth-last-of-type(5) {
+            background: chocolate;
+            color: white;
+        }
+
+        /*문자로 구분*/
+        #test3 p:first-letter {
+            font-size: 5px;
+        }
+
+        /*해상도와 관계없이 첫 한줄만 적용*/
+        #test3 p:first-line {
+            background-color: aquamarine;
+        }
+
+        /*사용자가 드래그한 글자 선택*/
+        test3 p::selection {
+            background-color: red;
+            color: white;
+        }
+
+        /*태그 이전 공간 선택*/
+        test3 p::before {
+            content: "@@@이전공간에 들어갈 문구@@@";
+        }
+        /*태그 이후 공간 선택*/
+        test3 p::after {
+            content: "@@@이후공간에 들어갈 문구@@@";
+        }
+        
+        test4 p:not(:nth-child(2n)){
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>일반 구조 선택자</h2>
+    <p>특정한 위치에 있는 태그 선택(위치로 구분)</p>
+    <div id="test1">
+        <p>test1</p>
+        <p>test2</p>
+        <p>test3</p>
+        <p>test4</p>
+        <p>test5</p>
+        <pre>test6</pre>
+    </div>
+    <hr>
+    <h2>형태 구조 선택자</h2>
+    <p>특정한 위치에 있는 태그 선택(태그별로 구분)</p>
+    <div id="test2">
+        <p>test1</p>
+        <p>test2</p>
+        <p>test3</p>
+        <p>test4</p>
+        <p>test5</p>
+        <pre>test6</pre>
+    </div>
+    <hr>
+    <h2>문자 선택자</h2>
+    <p>태그 내부에서 특정 조건의 문자를 선택하는 선택자</p>
+    <div id="test3">
+        <p>1. 동해물과 백두산이 마르고 닳도록
+            하느님이 보우하사 우리나라 만세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            2. 남산 위에 저 소나무 철갑을 두른 듯
+            바람 서리 불변함은 우리 기상일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            3. 가을 하늘 공활한데 높고 구름 없이
+            밝은 달은 우리 가슴 일편단심일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            4. 이 기상과 이 맘으로 충성을 다하여
+            괴로우나 즐거우나 나라 사랑하세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세</p>
+    </div>
+    <hr>
+    <h2>부정 선택자</h2>
+    <p>지금까지 선택자에 대해 반대로 적용하는 선택자</p>
+    <div id="test4">
+        <p>test1</p>
+        <p>test2</p>
+        <p>test3</p>
+        <p>test4</p>
+        <p>test5</p>
+        <pre>test6</pre>
+    </div>
+</body></html>
