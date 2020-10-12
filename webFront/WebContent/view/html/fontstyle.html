@@ -196,12 +196,351 @@
         #test2{
             font: italic bold 20px "고딕체";
         }
+        #test3{
+            text-decoration: underline;            
+            font-size:40px;
+            /*그림자 속성*/
+            /*기본값
+            text-shadow:  10px 10px orange;
+            이런식도 되긴함
+            text-shadow:  10px 10px #888888;
+            이경우에는 
+            #88만 써도 적용됨
+            */
+            /*하나 더 추가하면 번짐효과*/
+            text-shadow:  10px 10px 10px gray;
+        }
+        #test4{
+            text-decoration: overline;
+            text-transform: capitalize;
+            /*그림자 여러개 주기*/
+            text-shadow:  10px 10px 10px gray, 5px 5px 5px red, 15px 15px 15px blue;
+        }
+        #test5{
+            text-decoration: line-through;
+            color: rgba(255,0,0,0.3);
+            text-transform: uppercase;
+        }
+        #test6{
+            /*줄없애는 역할*/
+            text-decoration: none;
+            /*소문자로 바꾸기*/
+            text-transform: lowercase;
+        }
     </style>
     <div>
         <h3>font 속성 : 글꼴 관련 스타일을 한번에 지정할 때 사용한다.</h3>
         <p id="10px">선택자 { font : font-style font-variant font-weight font-size/line-height font-famliy; }의 형식으로 사용된다.</p>
         <div id="test1">글꼴 관련 스타일 테스트1 (16px 궁서체)</div>
         <div id="test2">글꼴 관련 스타일 테스트2 (italic bold 20px 고딕체)</div>
+        <div id="test3">테스트1 언더라인</div><br>
+        <div id="test4">테스트2 오버라인 ahahahacikK</div>
+        <div id="test5">테스트3 취소선라인 aaaaaa</div>
+        <a href="#" id="test6">테스트4 줄없애기 AAAA</a>
     </div>
+    
+    <hr><hr><hr>
+    <style>
+        #p21{
+            /*개행이 안됨*/
+            font-size: 12px;
+            white-space: nowrap;
+        }
+    </style>
+    <p id="p21">1. 동해물과 백두산이 마르고 닳도록
+            하느님이 보우하사 우리나라 만세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            2. 남산 위에 저 소나무 철갑을 두른 듯
+            바람 서리 불변함은 우리 기상일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            3. 가을 하늘 공활한데 높고 구름 없이
+            밝은 달은 우리 가슴 일편단심일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            4. 이 기상과 이 맘으로 충성을 다하여
+            괴로우나 즐거우나 나라 사랑하세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+    </p>
+    <hr>
+    <style>
+        #p22{
+            /*공백이 여러개 인걸 여러개로 처리함*/
+            /*html은 공백이 여러개여도 하나로 처리하는게 기본값*/
+            font-size: 12px;
+            white-space: pre;
+        }
+    </style>
+    <p id="p22">
+            1. 동해물과 백두산이 마르고 닳도록
+            하느님이 보우하사 우리나라 만세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            2. 남산 위에 저 소나무 철갑을 두른 듯
+            바람 서리 불변함은 우리 기상일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            3. 가을 하늘 공활한데 높고 구름 없이
+            밝은 달은 우리 가슴 일편단심일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            4. 이 기상과 이 맘으로 충성을 다하여
+            괴로우나 즐거우나 나라 사랑하세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+    </p>
+    <hr>
+    <style>
+        #p23{
+            /*기존 보이는 대로 나옴*/
+            font-size: 12px;
+            white-space: pre-line;
+        }
+    </style>
+    <p id="p23">
+            1. 동해물과 백두산이 마르고 닳도록
+            하느님이 보우하사 우리나라 만세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            2. 남산 위에 저 소나무 철갑을 두른 듯
+            바람 서리 불변함은 우리 기상일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            3. 가을 하늘 공활한데 높고 구름 없이
+            밝은 달은 우리 가슴 일편단심일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            4. 이 기상과 이 맘으로 충성을 다하여
+            괴로우나 즐거우나 나라 사랑하세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+    </p>
+    <hr>
+    <style>
+        #p24{
+            /*pre와 비슷하지만 차이가 좀 있음*/
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+    </style>
+    <p id="p24">
+            1. 동해물과 백두산이 마르고 닳도록
+            하느님이 보우하사 우리나라 만세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            2. 남산 위에 저 소나무 철갑을 두른 듯
+            바람 서리 불변함은 우리 기상일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            3. 가을 하늘 공활한데 높고 구름 없이
+            밝은 달은 우리 가슴 일편단심일세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+
+            4. 이 기상과 이 맘으로 충성을 다하여
+            괴로우나 즐거우나 나라 사랑하세
+            무궁화 삼천리 화려 강산
+            대한 사람 대한으로 길이 보전하세
+    </p>
+    <hr>
+    <style>
+        #p31{
+            /*자간 늘리기*/
+            letter-spacing: 10px;
+        }
+        #p32{
+            /*자간 늘리기*/
+            letter-spacing: 10px;
+        }
+        #p33{
+            /*글자간 간격*/
+            word-spacing: 10px;
+        }
+        #p34{
+            word-spacing: 20px;
+        }
+        #p123{
+            /*정렬*/
+            direction: rtl;
+        }
+        #p124{
+            direction: ltr;
+        }
+        #p125{
+            text-align: left;
+            /*들여쓰기*/
+            text-indent: 10px;
+        }
+        #p126{
+            text-align: right;            
+        }
+        #p127{
+            text-align: center;
+        }
+        #p128{
+            text-align: justify;
+            /*들여쓰기*/
+            text-indent: 20px;
+        }
+    </style>
+    <p id="p31">테 스 트<br>테 스 트</p>
+    <p id="p32">테 스 트<br>테 스 트</p>
+    <p id="p33">테 스 트<br>테 스 트</p>
+    <p id="p34">테 스 트<br>테 스 트</p>
+    
+    <p id="p123">안녕하세요</p>
+    <br>
+    <p id="p124">안녕하세요</p>
+    <p id="p125">테 스 트<br>테 스 트</p>
+    <p id="p126">테 스 트<br>테 스 트</p>
+    <p id="p127">테 스 트<br>테 스 트</p>
+    <p id="p128">테 스 트<br>테 스 트</p>
+    
+    <hr><hr><hr>
+    <style>
+        #pp7{
+            /*행간*/
+            /*height와 같은 값 주면 상하 가운데 정렬됨*/
+            line-height: 40px;
+            border: 1px solid black;
+            height: 40px;
+            text-align: center;
+        }
+        #pp8{
+            line-height: 50px;
+            border: 1px solid black;
+            height: 100px;
+        }
+        #pp10{
+            border: 1px solid black;
+            width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip;
+            /*넘어가면 잘림*/
+        }
+        #pp11{
+            border: 1px solid black;
+            width: 100px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /*넘어가면 ...*/
+        }
+        #ul1{
+            list-style-type: disc;
+            list-style-position: inside;
+        }
+        #ul1>li{
+            background-color: green;
+        }
+        #ul2{
+            list-style-type: circle;
+            list-style-position: outside;
+        }
+        #ul2>li{
+            background: aqua;
+        }
+        #ul3{
+            list-style-type: square;
+        }
+        #ul4{
+            list-style-type: none;
+        }
+        #ol1{
+            list-style-type: armenian;
+            /*10진수*/
+            list-style-type: decimal;
+            /*숫자 앞에 0 붙이기*/
+            list-style-type: decimal-leading-zero;
+            /*대문자*/
+            list-style-type: upper-alpha;
+            /*소문자*/
+            list-style-type: lower-alpha;
+            /*로마숫자*/
+            list-style-type: lower-roman;
+            /*그리스문자*/
+            list-style-type: lower-greek;
+        }
+        #ol2{
+            list-style-image: url("../css/kakao.jpg");
+        }
+    </style>
+    <p id="pp7">안녕하세요</p>
+    <p id="pp8">안녕하세요</p>
+    <p id="pp9">안녕하세요</p>
+    <hr><hr>
+    <p id="pp10">안녕하세요 테스트를 위한 글입니다.</p>
+    <p id="pp11">안녕하세요 테스트를 위한 글입니다.</p>
+    <hr>
+    <ul id="ul1">
+        <li>text1</li>
+        <li>text2</li>
+        <li>text3</li>
+    </ul>
+    <hr>
+    <ul id="ul2">
+        <li>text1</li>
+        <li>text2</li>
+        <li>text3</li>
+    </ul>
+    <hr>
+    <ul id="ul3">
+        <li>text1</li>
+        <li>text2</li>
+        <li>text3</li>
+    </ul>
+    <hr>
+    <ul id="ul4">
+        <li>text1</li>
+        <li>text2</li>
+        <li>text3</li>
+    </ul>
+    <hr>
+    <ol id="ol1">
+        <li>text1</li>
+        <li>text2</li>
+        <li>text3</li>
+    </ol>
+    <hr>
+    <ol id="ol2">
+        <li>text1</li>
+        <li>text2</li>
+        <li>text3</li>
+    </ol>
+    <style>
+        #ul5{
+            list-style: circle inside;
+        }
+        #ul6{
+            list-style: square inside url("../css/kakao.jpg");
+        }
+    </style>
+    <hr>
+    <ul id="ul5">
+        <li>text1</li>
+        <li>text2</li>
+        <li>text3</li>
+    </ul>
+    <hr>
+    <ul id="ul6">
+        <li>text1</li>
+        <li>text2</li>
+        <li>text3</li>
+    </ul>
+    <hr>
 </body>
 </html>
