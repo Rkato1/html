@@ -326,6 +326,7 @@
         }
         #test3{
             border: 10px dashed black;
+            /*부모를 기준으로 좌우여백을 같게 맞추는것*/
             margin: 0 auto;
             text-align: center;
         }
@@ -333,5 +334,33 @@
     <br>
     <div id="test1" class="test">테스트1</div>
     <div id="test2" class="test">테스트2</div>
-    <div id="test2" class="test">테스트3</div>
+    <div id="test3" class="test">테스트3</div>
+    
+    <style>
+        #div-wrap{
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+        .inner-div{
+            /*content-box가 기본값*/
+            /*윤곽선 값도 총 길이에 합하기*/
+            box-sizing: border-box;
+            width: 250px;;
+            border: 1px dashed red;
+            height: 250px;
+            /*부모요소가 길이를 초과하지 않을 경우에만 붙임*/
+            float: left;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+    <div id="div-wrap">
+        <div class="inner-div red"></div>
+        <div class="inner-div blue"></div>
+    </div>
 </body></html>

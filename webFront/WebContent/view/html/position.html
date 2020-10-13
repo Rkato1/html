@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<style>
+    .outer{
+        /*기준점 개념*/
+        position: relative;
+    }
+    .position{
+        border: 1px solid black;
+    }
+    .first{
+        width: 300px;
+        height: 300px;
+        background-color: yellow;
+    }
+    .second{
+        width: 200px;
+        height: 200px;
+        background-color: yellowgreen;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+    .third{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        top:100px;
+        left: 100px;
+    }
+    .fixed-area{
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255,0,0,0.7);
+        position: fixed;
+    }
+</style>
+
+<body>
+    <h3>절대위치 상대위치</h3>
+    <div class="outer">
+        <div class="position first"></div>
+        <div class="position second"></div>
+        <div class="position third"></div>
+    </div>
+    <hr>
+    <h3>고정위치</h3>
+    <div class="position fixed-area">
+    </div>
+    <br><br><br><br><br>
+    <hr>
+    <h3>z-index</h3>
+    <style>
+        .z-test1{
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;
+            position: absolute;
+            top:100px;
+            left: 100px;
+            background-color: yellow;
+            z-index: 10;
+        }
+        .z-test2{
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;
+            position: absolute;
+            top:50px;
+            left: 50px;
+            background-color: yellowgreen;
+            z-index: 9;
+        }
+        .z-test3{
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;            
+            position: absolute;
+            background-color: red;
+            z-index: 5;
+        }
+    </style>
+    <div class="outer">
+        <div class="z-test1">요소1</div>
+        <div class="z-test2">요소2</div>
+        <div class="z-test3">요소3</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+    <style>
+        #vi-test{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /*display: none;*/
+            /*위는 해당요소 없는것처럼 처리하고 밑은 보이지만 않게 처리*/
+            /*visibility: hidden;*/
+            /*0~1 투명도*/
+            opacity: 0.5;
+        }
+        .f-test{
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        .float-test{
+            width: 100px;
+            height: 50px;
+            border: 1px solid red;
+            /*부모가 자식 추적을 못함*/
+            /*우측정렬*/
+            /*float: right;*/
+            /*ㅁㅁㅁㅁㅁ*/
+            float: left;
+            /*display와 조금 다름*/
+            /*ㅁ ㅁ ㅁ ㅁ ㅁ*/
+            /*display: inline-block;*/
+        }
+        #test11{
+            width: 100px;
+            height: 50px;
+            border: 1px solid blue;
+            /*float영향을 초기화*/
+            clear: both;
+        }
+    </style>
+    <div id="vi-test"></div>
+    <h1>테스트문구</h1>
+    <hr>
+    <h3>float속성</h3>
+    <div class="f-test">
+        <div class="float-test">1111</div>
+        <div class="float-test">2222</div>
+        <div class="float-test">3333</div>
+        <div class="float-test">4444</div>
+        <div class="float-test">5555</div>
+        <div id="test11">테스트</div>
+    </div>
+    <hr>
+    <style>
+        .over{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 50px;
+            font-size: 20px;
+        }
+        .d1{
+            overflow: visible;
+        }
+        .d2{
+            /*양이 적어도 무조건 스크롤 생김*/
+            overflow: scroll;
+        }
+        .d3{
+            overflow: auto;
+        }
+        .d4{
+            overflow: hidden;
+        }
+    </style>
+    <h3>overflow</h3>
+    <div class="over d1">디지털 컨버전스기반 융합 응용 SW 개발자 양성과정</div>
+    <div class="over d2">디지털 컨버전스기반 융합 응용 SW 개발자 양성과정</div>
+    <div class="over d3">디지털 컨버전스기반 융합 응용 SW 개발자 양성과정</div>
+    <div class="over d4">디지털 컨버전스기반 융합 응용 SW 개발자 양성과정</div>
+</body></html>
