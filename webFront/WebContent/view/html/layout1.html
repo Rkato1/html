@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
 </head>
-    <!--style>
+<!--style>
         .temp{
             width: 1000px;
             height: 800px;
@@ -39,6 +39,7 @@
             background-color: skyblue;
         }
     </style-->
+
 <body>
     <!--div class="temp">
         <div id="header">header</div>
@@ -49,114 +50,144 @@
         <div id="footer">footer</div>
     </div-->
     <style>
-        .temp{
+        .temp {
             width: 750px;
             height: 600px;
             border: 3px solid black;
         }
-        .temp>*{
+
+        .temp>* {
             text-align: center;
         }
-        #header{
+
+        #header {
             width: auto;
             height: 50px;
             background-color: aliceblue;
         }
-        #h1{
+
+        #h1 {
             width: 25%;
             height: 50px;
             background-color: aquamarine;
-            float:left;
+            float: left;
         }
-        #h2{
+
+        #h2 {
             width: 50%;
             height: 50px;
             background-color: aqua;
-            float:left;
+            float: left;
         }
-        #h3{
+
+        #h3 {
             width: 25%;
             height: 50px;
             background-color: mediumaquamarine;
-            float:left;
+            float: left;
         }
-        #nav{
+
+        #nav {
             width: auto;
             height: 50px;
             background-color: blanchedalmond;
         }
-        #body{
+
+        #body {
             width: auto;
             height: 300px;
             background-color: cyan;
         }
-        #b1{
+
+        #b1 {
             width: 20%;
             height: 300px;
             background-color: lawngreen;
             float: left;
         }
-        #b2{
+
+        #b2 {
             float: left;
             width: 50%;
             height: 300px;
             background-color: darkcyan;
         }
-        #b3{
+
+        #b3 {
             width: 30%;
             height: 300px;
             background-color: beige;
             float: left;
         }
-        #loginform{
+
+        #loginform {
             box-sizing: border-box;
             width: auto;
-            height: 100px;
+            height: 50px;
             border: 1px dotted black;
         }
-        #input{
+
+        #input {
             box-sizing: border-box;
             width: 70%;
             height: 50px;
             border: 1px dotted black;
             display: inline-block;
             float: left;
+            overflow: hidden;
         }
-        #id{
-            width: auto;
-            height: 50px;
+
+        #id {
+            width: 100%;
+            height: 25px;
             display: inline-block;
-            float: left;
         }
-        #pw{
-            width: auto;
-            height: 50px;
-            display: inline-block;            
-            float: left;
+
+        #pw {
+            width: 100%;
+            height: 25px;
+            display: inline-block;
         }
-        #btn{
-            width: 30%;
-            height: 100px;
-            float: left;
+        input{
+            width: 90%;
         }
-        #ex{
-            width: auto;
-            height: 50px;
+        input[type=submit]{
+            height: 95%;
+        }
+
+        #btn {
             box-sizing: border-box;
             border: 1px dotted black;
+            width: 30%;
+            height: 50px;
+            float: left;
+            text-align: center;
+            line-height: 48px;
         }
-        #ex>*{
+
+        #ex {
+            width: auto;
+            height: 25px;
+            box-sizing: border-box;
+            border: 1px dotted black;
+            text-align: center;
+            line-height: 23px;
+        }
+
+        #ex>* {
             font-size: 10px;
         }
-        #create{
+
+        #create {
             width: 50%;
-            height: 50px;
+            height: 25px;
             display: inline-block;
             float: left;
         }
-        #find{
+
+        #find {
             width: 50%;
-            height: 50px;
+            height: 25px;
             display: inline-block;
             float: left;
         }
@@ -174,23 +205,24 @@
             <div id="b3">
                 <div id="loginform">
                     <div id="input">
-                    <div id="id">
-                        <input type="text" placeholder="ID를 입력하세요.">
+                        <form action="login.html" method="post">
+                            <div id="id">
+                                <input type="text" placeholder="ID를 입력하세요." name="id">
+                            </div>
+                            <div id="pw">
+                                <input type="password" placeholder="PW를 입력하세요." name="pw">
+                            </div>
+                        </form>
                     </div>
-                    <div id="pw">
-                        <input type="password" placeholder="PW를 입력하세요.">
-                    </div>
-                        </div>
                     <div id="btn">
-                        <input type="button" value="로그인">
+                        <input type="submit" value="로그인">
                     </div>
                 </div>
                 <div id="ex">
                     <div id="create"><a href="#">회원가입</a></div>
                     <div id="find"><a href="#">ID</a>/<a href="#">PW 찾기</a></div>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+</body></html>
