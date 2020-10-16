@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.footer{
+    width: 80%;
+    height: 150px;
+    margin: 0 auto;
+    background: black;
+    color: white;
+    text-align: center;    
+}
+.footer p{
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 150px;
+}

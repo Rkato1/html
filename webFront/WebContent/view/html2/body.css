@@ -1,0 +1,82 @@
+@charset "UTF-8";
+.body{
+    width: 80%;
+    height: 500px;
+    margin: 0 auto;
+}
+#lbody{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+#lbody>img{
+    width: 100%;
+    height: 25%;
+}
+#rbody{
+    width: 80%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    background-color: lightgray;
+}
+#rbody>ul{
+    list-style-type: none;
+}
+#left{
+    margin: 0px;
+    padding: 0px;
+    width: 30%;
+    float: left;
+    text-align: left;
+    font-weight: bold;
+}
+#right{
+    margin: 0px;
+    padding: 0px;
+    width: 70%;
+    float:left;
+    text-align: left;
+}
+#left>li,#right>li,#ex>li{
+    width: 100%;
+    height: 20px;
+    margin: 10px;
+    font-size: 12px;
+}
+#right input[type="button"]{
+    width: 25%;
+    margin-right: 5%;
+    height: auto;
+}
+#btnspe{
+    background-color: darkgreen;
+    color: white;
+}
+#textbox{
+    width: 20%;
+}
+#txtbox1{
+    width: 15%;
+    background-color: gray;
+}
+#chkgen{
+    
+    background-color: dimgrey;
+    color: white;
+}
+input[type=radio]{
+    display: none;
+}
+input[type=radio]:checked+label{
+    background-color: aquamarine;
+}
+label{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #4b4b4b;
+}

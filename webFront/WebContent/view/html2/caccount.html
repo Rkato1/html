@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <link href="header.css" rel="stylesheet" type="text/css">
+    <link href="body.css" rel="stylesheet" type="text/css">
+    <link href="footer.css" rel="stylesheet" type="text/css">
+    <div class="header">
+        <div id="logo">
+            <img src="img/character.png">
+        </div>
+        <div id="hmain">
+            <div id="hmaintop">
+                <h1>Welcome To Lee's World</h1>
+            </div>
+            <div id="hmainbot">
+                <ul>
+                    <li>JAVA</li>
+                    <li>ORACLE</li>
+                    <li>HTML5/CSS3</li>
+                    <li>게시판</li>
+                </ul>
+            </div>
+        </div>
+        <div id="loginform">
+            <div id="login">
+                <input type="button" value="로그인">
+            </div>
+            <div id="caccount">
+                <input type="button" value="회원가입">
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div id="lbody">
+            <img src="img/ad1.jpg">
+            <p>광고는 처음이지</p>
+            <img src="img/ad2.jpg">
+            <p>광고는 4딸라</p>
+        </div>
+        <div id="rbody">
+            <h3>회원가입</h3>
+            <hr>
+            <ul id="left">
+                <li>아이디</li>
+                <li>비밀번호</li>
+                <li>비밀번호 확인</li>
+                <li>이름</li>
+                <li>우편번호</li>
+                <li>주소</li>
+                <li>상세주소</li>
+                <li>전화번호</li>
+                <li>성별</li>
+                <li>약관동의</li>
+            </ul>
+            <ul id="right">
+                <li><input type="text"> 4~12자리 영/숫자</li>
+                <li><input type="text"> 8자리이상</li>
+                <li><input type="text"></li>
+                <li><input type="text"></li>
+                <li><input type="text" id="txtbox1" readonly> <input id="btnspe" type="button" value="우편번호 찾기"></li>
+                <li><input type="text"></li>
+                <li><input type="text"></li>
+                <li>
+                    <select>
+                        <option>010</option>
+                        <option>011</option>
+                        <option>017</option>
+                        <option>019</option>
+                    </select>-<input type="text" id="textbox">-<input type="text" id="textbox">
+                </li>
+                <li><input type="radio" name="chkgen"id="m"><label for="m">남자</label> <input type="radio" name="chkgen" id="f"><label for="f">여자</label></li>
+                <li><input type="checkbox">사이트 이용 약관(필수) <input type="checkbox">개인정보 처리 약관(선택)</li>
+            </ul>
+            <input type="button" id="btnspe" value="회원가입">
+            <input type="button" id="btnspe" value="취소">
+        </div>
+    </div>
+    <div class="footer">
+        <p>COPYRIGHT ⓒ Lee's Cooperation</p>
+    </div>
+</body></html>

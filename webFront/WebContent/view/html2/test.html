@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <style>
+        .temp {
+            width: 750px;
+            height: 600px;
+            border: 3px solid black;
+        }
+
+        .temp>* {
+            text-align: center;
+        }
+
+        #header {
+            width: auto;
+            height: 50px;
+        }
+
+        #h1 {
+            width: 25%;
+            height: 50px;
+            float: left;
+        }
+        #h2 {
+            width: 50%;
+            height: 50px;
+            float: left;
+        }
+        #header img{
+            height: 50px;
+        }
+
+        #nav {
+            width: auto;
+            height: 50px;
+            background-color: lightgreen;
+            color: white;
+        }
+        #nav>div{
+            text-align: center;
+            line-height: 50px;
+            display: inline-block;
+            width: 20%;
+        }       
+
+        #body {
+            width: auto;
+            height: 400px;
+        }
+
+        #b1 {
+            width: 15%;
+            height: 400px;            
+            float: left;
+        }
+        #b1>img{
+            width: auto;
+            height:100%;
+        }
+        #b2 {
+            float: left;
+            width: 55%;
+            height: 400px;
+            text-align: center;
+        }
+        #b2 img{
+            width: 90%;
+            height: 170px;
+        }
+        #b2>*{
+            width: 50%;
+            float: left;
+            display: inline-block;
+            font-size: 10px;            
+        }
+
+        #b3 {
+            width: 30%;
+            height: 400px;
+            float: left;
+        }
+
+        #loginform {
+            box-sizing: border-box;
+            width: auto;
+            height: 50px;
+            border: 1px dotted black;
+        }
+
+        #input {
+            box-sizing: border-box;
+            width: 70%;
+            height: 50px;
+            border: 1px dotted black;
+            display: inline-block;
+            float: left;
+            overflow: hidden;
+        }
+
+        #id {
+            width: 100%;
+            height: 25px;
+            display: inline-block;
+        }
+
+        #pw {
+            width: 100%;
+            height: 25px;
+            display: inline-block;
+        }
+        input{
+            width: 90%;
+        }
+        input[type=submit]{
+            height: 95%;
+        }
+
+        #btn {
+            box-sizing: border-box;
+            border: 1px dotted black;
+            width: 30%;
+            height: 50px;
+            float: left;
+            text-align: center;
+            line-height: 48px;
+        }
+
+        #ex {
+            width: auto;
+            height: 25px;
+            box-sizing: border-box;
+            border: 1px dotted black;
+            text-align: center;
+            line-height: 23px;
+        }
+
+        #ex>* {
+            font-size: 10px;
+        }
+
+        #create {
+            width: 50%;
+            height: 25px;
+            display: inline-block;
+            float: left;
+        }
+
+        #find {
+            width: 50%;
+            height: 25px;
+            display: inline-block;
+            float: left;
+        }
+        #ri{
+            width: 100%;
+            height: auto;
+        }
+        #ri>img{
+            width: 100%;
+            height: 100%;
+        }
+        #board>table{
+            width: 100%;
+            height: auto;
+        }
+        #board td{
+            text-align: left;
+            font-size: 13px;
+        }
+        #board th{
+            font-size: 15px;
+        }
+        .footer{
+            height: auto;
+            font-size: 20px;
+        }
+    </style>
+    <div class="temp">
+        <div id="header">
+            <div id="h1">
+                <img src="./imgs/logo.jpg">                
+            </div>
+            <div id="h2">
+                <img src="./imgs/mainlogo.jpg">
+            </div>
+        </div>
+        <div id="nav">
+            <div id="nav1">Home</div>
+            <div id="nav2">Profile</div>
+            <div id="nav3">Board</div>
+            <div id="nav4">Contract</div>
+        </div>
+        <div id="body">
+            <div id="b1">
+                <img src="imgs/left_img.jpg">
+            </div>
+            <div id="b2">
+                <div id="con1">
+                    <img src="imgs/main_img1.jpg">
+                    <p>나무를 심는 사람들</p>
+                </div>
+                <div id="con2">
+                    <img src="imgs/main_img2.jpg">
+                    <p>아이들에게 녹색 미래를</p>
+                </div>
+                <div id="con3">
+                    <img src="imgs/main_img3.jpg">
+                    <p>설악산을 살리는 길</p>
+                </div>
+                <div id="con4">
+                    <img src="imgs/main_img4.jpg">
+                    <p>사라지는 북극곰들</p>
+                </div>
+            </div>
+            <div id="b3">
+                <div id="loginform">
+                    <div id="input">
+                        <form action="login.html" method="post">
+                            <div id="id">
+                                <input type="text" placeholder="ID를 입력하세요." name="id">
+                            </div>
+                            <div id="pw">
+                                <input type="password" placeholder="PW를 입력하세요." name="pw">
+                            </div>
+                        </form>
+                    </div>
+                    <div id="btn">
+                        <input type="submit" value="로그인">
+                    </div>
+                </div>
+                <div id="ex">
+                    <div id="create"><a href="#">회원가입</a></div>
+                    <div id="find"><a href="#">ID</a>/<a href="#">PW 찾기</a></div>
+                </div>
+                <div id="ri">
+                    <img src="imgs/right_img.jpg">
+                </div>
+                <div id="board">
+                    <table>
+                      <caption> 나도 한마디</caption>
+                       <tr>
+                        <th>이름</th>
+                        <th>메시지</th>
+                        </tr>
+                        <tr>
+                            <td>홍길동</td>
+                            <td>자연을 살리자!!</td>
+                        </tr>
+                        <tr>
+                            <td>영희</td>
+                            <td>곰이 불쌍해요 ㅠㅠ</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <blockquote><b>ΘExample from KH Academy</b></blockquote>
+        </div>
+    </div>
+    <hr><hr><hr>
+    <h2>폴라로이드 느낌의 사진 만들기</h2>
+    <hr>
+    <style>
+        #polraroid{
+            position: relative;
+            top:100px;
+            width: 60%;
+            height: 60%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 2.5em;            
+            border: 2px solid black;            
+            box-shadow: 15px 15px 5px gray;
+            transform: rotate(15deg);
+        }
+        #polraroid>img{
+            width: 60%;
+            height: 60%;
+        }
+        #polraroid>p{
+            color:green;
+        }
+    </style>
+    <div id="polraroid">
+        <img src="imgs/logo.jpg">
+        <p>석양이 진다.....</p>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <hr><hr><hr>
+    <h1>사진 갤러리 만들기</h1>
+    <hr>
+    <style>
+        .blackbg{
+            background: black;
+            width: 800px;
+            height: 600px;
+            position: relative;
+            top:50px;
+            left: 100px;
+        }
+        .imgs{
+            padding: 30px;
+            margin: 0 auto;
+            width: 200px;
+            height: auto;
+            display: inline-block;
+        }
+        .imgs>img{
+            width: 100%;
+            height: 100%;
+        }
+        .imgs>img:hover{
+            
+        }
+        .imgs>img[name="hidden"]{
+            border: 3px solid gray;
+            border-radius: 50px;
+            width: 150%;
+            height: 150%;
+            display: none;
+        }
+    </style>
+    <div class="blackbg">
+        <div class="imgs">
+            <img src="imgs/logo.jpg">
+            <img src="imgs/logo.jpg" name="hidden">
+        </div>
+        <div class="imgs">
+            <img src="imgs/main_img1.jpg">
+            <img src="imgs/main_img1.jpg" name="hidden">
+        </div>
+        <div class="imgs">
+            <img src="imgs/main_img2.jpg">
+            <img src="imgs/main_img2.jpg" name="hidden">
+        </div>
+        <div class="imgs">
+            <img src="imgs/main_img3.jpg">
+            <img src="imgs/main_img3.jpg" name="hidden">
+        </div>
+        <div class="imgs">
+            <img src="imgs/main_img4.jpg">
+            <img src="imgs/main_img4.jpg" name="hidden">
+        </div>
+        <div class="imgs">
+            <img src="imgs/logo.jpg">
+            <img src="imgs/logo.jpg" name="hidden">
+        </div>
+    </div>
+       <br><br><br><br><br>
+        <hr><hr><hr>
+    <style>
+        .gal{
+            background: black;
+            margin: 0 auto;
+            border: 5px solid black;
+            width: 670px;
+            height: 400px;
+        }
+        .small{
+            width: 180px;
+            height: 120px;
+        }
+        .large{
+            transition: opacity 2s;
+            display: none;
+            width: 0px;
+            height: 0px;
+            position: absolute;
+            top:40px;
+            left: 40px;
+        }
+        .gal>ul{
+            list-style-type: none;
+        }
+        .gal>ul>li{
+            float: left;
+            padding: 10px;
+            position: relative;
+        }
+        .small:hover+.large,.large:hover{
+            display: inline-block;
+            width: 360px;
+            height: 240px;
+            opacity: 1;
+            z-index: 10;
+            border-radius: 50px;
+        }
+    </style>
+    <div class="gal">
+       <ul>
+        <li>
+            <img src="imgs/logo.jpg" class="small">
+            <img src="imgs/logo.jpg" name="hidden" class="large">
+        </li>
+        <li>
+            <img src="imgs/main_img1.jpg" class="small">
+            <img src="imgs/main_img1.jpg" name="hidden" class="large">
+        </li>
+        <li>
+            <img src="imgs/main_img2.jpg" class="small">
+            <img src="imgs/main_img2.jpg" name="hidden" class="large">
+        </li>
+        <li>
+            <img src="imgs/main_img3.jpg" class="small">
+            <img src="imgs/main_img3.jpg" name="hidden" class="large">
+        </li>
+        <li>
+            <img src="imgs/main_img4.jpg" class="small">
+            <img src="imgs/main_img4.jpg" name="hidden" class="large">
+        </li>
+        <li>
+            <img src="imgs/logo.jpg" class="small">
+            <img src="imgs/logo.jpg" name="hidden" class="large">
+        </li>
+        </ul>
+    </div>
+    <hr><hr><hr>
+    <h1>기본메뉴 만들기</h1>
+    <hr>
+    <link href="navi1.css" rel="stylesheet" type="text/css">
+    <div class="menubar">
+       <ul>
+           <li><a href="#">JAVA</a></li>
+           <li><a href="#">ORACLE</a></li>
+           <li><a href="#">HTML5</a></li>
+           <li><a href="#">CSS3</a></li>
+           <li><a href="#">javascript</a></li>
+           <li><a href="#">jQuery</a></li>
+           <li><a href="#">서버</a></li>
+           <li><a href="#">Framework</a></li>
+       </ul>
+    </div>
+</body></html>

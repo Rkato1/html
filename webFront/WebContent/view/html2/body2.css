@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+.body {
+    width: 80%;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#lbody {
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    float: left;
+}
+
+#lbody > img {
+    width: 100%;
+    height: 25%;
+}
+
+#lup {
+    width: 100%;
+    height: 20%;
+}
+
+#lup > * {
+    margin: 5%;
+    font-weight: bold;
+}
+
+#ldn {
+    width: 100%;
+    height: 60%;
+}
+
+#ldn > * {
+    width: 100%;
+    height: auto;
+}
+
+#rbody {
+    width: 80%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    background-color: lightgray;
+    border: 3px solid gray;
+    box-sizing: border-box;
+}
+
+#rtop{
+    width: 100%;
+    height: 5%;
+    text-align: right;
+}
+#rmid{
+    width: 100%;
+    height: 85%;
+}
+#rbot{
+    width: 100%;
+    height: 10%;
+}
+
+#rmid ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+    height: 90%;
+}
+#rmid li:first-child{
+    background: black;
+    font-weight: bold;
+    color: white;    
+    border-right: 3px solid white;
+}
+#rmid #view>li:first-child{
+    border: none;
+}
+#no{
+    width: 10%;
+}
+#title{
+    width: 40%;    
+}
+#writer{
+    width: 25%;
+}
+#date{
+    width: 15%;
+}
+#view{
+    width: 10%;
+}
