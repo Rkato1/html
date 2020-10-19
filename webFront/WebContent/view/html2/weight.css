@@ -1,0 +1,179 @@
+@charset "UTF-8";
+
+.left{
+    margin-left:5%;
+    width: 10%;
+    height: 720px;
+    background-color: gray;
+    float: left;
+}
+.left ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.left li{
+    margin-top: 30%;
+}
+.left a{
+    text-decoration: none;
+    color: black;
+}
+.mid{
+    width: 60%;
+    height: 720px; 
+    float: left;
+    text-align: center;
+}
+.right{
+    width: 20%;
+    height: 720px;
+    float: left;
+    margin-right: 5%;
+    text-align: center;
+}
+.mid>*{
+    padding-left: 5%;
+    padding-right: 5%;    
+    padding: 0px;
+}
+#title{
+    width: auto;
+    height: 10%;
+    font-size: 30px;
+}
+#center{
+    width: 100%;
+    height: 80%;
+}
+#center2{
+    margin-left: 10%;
+    width: 80%;
+    height: 50%;
+    background: gray;
+    border: 3px solid black;
+    border-radius: 100px;
+}
+#center3{
+    margin-left: 10%;
+    width: 80%;
+    height: 60%;
+    background: gray;
+    border: 3px solid black;
+    border-radius: 100px;
+}
+#center4{
+    margin-left: 10%;
+    width: 80%;
+    height: 70%;
+    background: gray;
+    border: 3px solid black;
+    border-radius: 100px;
+}
+#center>img{
+    width: auto;
+    height: 90%;
+}
+#footer{
+    width: auto;
+    height: 10%;
+}
+.right>*{
+    text-align: center;
+    width: 100%;
+}
+#ad{
+    height: 15%;
+    margin-top: 25%;
+}
+#loginform{
+    height: 30%;
+}
+#idpw{
+    width: 70%;
+    float: left;
+    height: 80%;
+}
+#idpw input{
+    width: 80%;
+}
+#id,#pw{
+    height: 50%;
+}
+#id input, #pw input{
+    height: 80%;
+}
+#btn{
+    width: 30%;
+    height: 80%;
+    float: left;
+}
+#btn>input{
+    width: 100%;
+    height: 50%;
+    font-size: 30px;
+    margin-top: 30%;
+}
+#btns{
+    padding-top: 30%;
+}
+#btns input{
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 5%;
+    width: 40%;
+    color: white;
+    background: skyblue;    
+}
+#search{
+    height: 20%;
+}
+#search>select{
+    width: 30%;
+    float: left;
+    height: 50%;
+}
+#search>input{
+    width: 70%;
+    height: 50%;
+}
+#board{
+    clear: both;
+    height: 20%;
+    text-align: center;
+}
+#board>table{
+    border: 1px solid white;    
+    text-align: center;
+}
+#tr1{
+    background-color: gray;
+}
+#movie{
+    width: auto;
+    height: 100%;
+}
+#movie iframe{
+    width: 80%;
+    height: 50%;
+}
+#subtitle{
+    font-size: 30px;
+}
+#change>table{
+    padding-left: 25%;
+    padding-right: 25%;
+}
+.btns>input{
+    margin-top: 2.5%;
+    width: 30%;
+    font-size: 20px;
+}
+#delbtn>input{
+    margin-top: 2.5%;
+    width: 60%;
+    font-size: 40px;
+}
