@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <style>
+      .hh{
+          color: blue;
+      }
+  </style>
+   <script>
+        document.write("테스트문구1");
+    </script>
+    <h1 id="h1">첫번째</h1>
+    <h1 id="h2" class="hh">두번째</h1>
+    <h1 id="h3" class="hh" name="n1">세번째</h1>
+    <h1 id="h4" class="hh" name="n2">네번째</h1>
+    <h1 id="h5">다섯번째</h1>
+    <h2 id="h6">여섯번째</h1>
+    <script>
+        /*
+        document.write("테스트문구2");
+        alert("경고");
+        var h1 = document.getElementById("h1");
+        var msg = prompt("메시지입력");
+        h1.innerHTML=msg;
+        alert(h1.innerHTML);
+        */
+        var test = document.getElementById("h5");
+        console.log(test.innerHTML);
+        console.log(document.getElementById("h6").innerHTML);
+        /*class는 배열로 받게됨*/
+        var test2 = document.getElementsByClassName("hh");        
+        console.log(test2[0].innerHTML);
+        console.log(test2[1].innerHTML);
+        console.log(test2[2].innerHTML);
+        /*범위넘어서 에러발생
+        console.log(test2[3].innerHTML);*/
+        /*태그이름도 배열로 받게됨*/
+        var test3 = document.getElementsByTagName("h1");
+        for(var i=0;i<test3.length;i++){
+            console.log(test3[i].innerHTML);
+        }
+        var test4 = document.getElementsByTagName("h2");
+        console.log(test4[0].innerHTML);
+        /*radio나 chkbox 때문에 배열로 받음*/
+        var test5 = document.getElementsByTagName("n1");
+        var test6 = document.getElementById("h1");
+        console.log(test6.innerHTML);
+    </script>
+</body>
+</html>

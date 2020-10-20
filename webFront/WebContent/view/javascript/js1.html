@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <p id="p1">안녕하세요</p>
+    <!--input type="button" value="그냥버튼"-->
+    <hr>
+    <button onclick="func1()"> 클릭 </button>
+    <button onclick="func2()"> 클릭2 </button>
+    <button onclick="func3()"> 클릭3 </button>
+    <hr>
+    <input type="text" placeholder="1~3중 하나를 입력하세요" id="if">
+    <button onclick="func4()">클릭</button>
+    <button onclick="func5()">클릭</button>
+    <script>
+        function func1(){
+            //alert("0?");
+            var p1 = document.getElementById("p1");
+            p1.innerHTML = "Hello";
+        }
+        function func2(){
+            var p1 = document.getElementById("p1");
+            p1.innerHTML = "안녕하세요";
+        }
+        function func3(){
+            var inputMsg = prompt("변경할 메시지를 입력하세요");
+            console.log(inputMsg);
+            var chk = confirm("["+inputMsg+"]로 변경하시겠습니까?");
+            console.log(chk);
+            if(chk==true){
+                var p1 = document.getElementById("p1");
+                p1.innerHTML = inputMsg;
+            }
+        }
+        function func4(){
+            var input = document.getElementById("if");
+            /*input은 innerHTML이 존재하지않음
+            alert(input.innerHTML);*/
+            //alert(input.placeholder);    
+            var inputNumber = input.value;
+            if(inputNumber==1){
+                alert("1입력");
+            }else if(inputNumber==2){
+                alert("2입력");
+            }else if(inputNumber==3){
+                alert("3입력");
+            }else{
+                alert("범위초과");
+            }
+        }
+        function func5(){
+            var input = document.getElementById("if");
+            var inputNumber = input.value;
+            /*js에서만 가능한 문법 자유도가 높음*/
+            inputNumber % 2 == 0 || alert("홀수");
+            inputNumber % 2 == 0 && alert("짝수");
+            /*
+            if(inputNumber%2==1){
+                alert("홀수");
+            }else{
+                alert("짝수");
+            }
+            */
+        }
+    </script>
+    <hr>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed black;
+            background: red;
+            float: left;
+        }
+        #div2{
+            width: 200px;
+            height: 200px;
+            border: 1px dashed black;
+            background: blue;
+            float: left;
+        }
+    </style>
+    <div id="div1" onclick="redFunc()"></div>
+    <div id="div2" onclick="blueFunc()"></div>
+    <button onclick="appear()">btn</button>
+    <script>
+        //css건들기
+        function redFunc(){
+            var tmp = document.getElementById("div1");
+            tmp.style.width = "400px";
+            tmp.style.height = "400px";
+            tmp.style.backgroundColor = "yellow";
+        }
+        function blueFunc(){
+            var tmp = document.getElementById("div2");
+            tmp.style.width = "400px";
+            tmp.style.height = "400px";
+            tmp.style.display="none";
+        }
+        function appear(){
+            var tmp = document.getElementById("div2");
+            tmp.style.display="inline-block";
+        }
+    </script>
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <hr>
+    <h2>문제.다음 중 이쁜 사람은 누구인가요?</h2>
+    <button onclick="reset()">초기화</button>
+    <hr>
+    <style>
+        #divi1{
+            float: left;
+        }
+        #divi2{
+            float: left;
+            margin-left: 10%;
+        }
+        #rony{
+            width: auto;
+            height: 300px;
+        }
+        #vegeta{
+            width: auto;
+            height: 300px;
+        }
+    </style>
+    <script>
+        /*this키워드 자기자*/
+        function ronyup(){
+            var img = document.getElementById("rony");
+            var img2 = document.getElementById("vegeta");
+            img.style.border = "3px dotted yellow";
+            img.style.width="auto";
+            img.style.height="600px";
+            img2.style.display="none";
+        }
+        function vegetaup(){
+            var img = document.getElementById("vegeta");
+            var img2 = document.getElementById("rony");
+            img.style.border = "3px dotted yellow";
+            img.style.width="auto";
+            img.style.height="600px";
+            img2.style.display="none";
+        }
+        function reset(){
+            var img = document.getElementById("vegeta");
+            var img2 = document.getElementById("rony");
+            img.style.border = "none";
+            img.style.width="auto";
+            img.style.height="300px";
+            img.style.display="inline-block";
+            img2.style.border = "none";
+            img2.style.width="auto";
+            img2.style.height="300px";
+            img2.style.display="inline-block";
+        }
+        function imgUp(img,img2){
+            var image = document.getElementById(img);
+            var image2 = document.getElementById(img2);
+            image.style.border = "3px dotted yellow";
+            image.style.width="auto";
+            image.style.height="600px";
+            image2.style.display="none";
+        }
+    </script>
+    <div id="divi1">
+        <img src="../html2/004.jpg" id="rony" onclick="imgUp('rony','vegeta')">
+    </div>
+    <div id="divi2">
+        <img src="../html2/vegeta.jpg" id="vegeta" onclick="imgUp('vegeta','rony')">
+    </div>
+    </body>
+</html>

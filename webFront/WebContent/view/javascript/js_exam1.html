@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <fieldset style="border:1px solid black">
+        <legend>보기</legend>
+        <label id="la1">이름 : </label>
+        <input type="text" id="id" placeholder="아이디를 입력하세요">
+        <br>
+        <label id="la2">pass : </label>
+        <input type="text" id="pw" placeholder="비밀번호를 입력하세요">
+        <br>
+        <label id="la3">name : </label>
+        <input type="text" id="name" placeholder="아이디를 입력하세요">
+        <br>
+        <label id="la4">addr : </label>
+        <input type="text" id="addr" placeholder="주소를 입력하세요">
+        <br>
+    </fieldset>
+    <button onclick="test1()">문제1</button>
+    <button onclick="test2()">문제2</button>
+    <button onclick="test3()">문제3</button>
+    <button onclick="test4()">문제4</button>
+    <button onclick="test5()">문제5</button>
+    <hr><hr><hr>
+    <p id="pp">김현식,KimHyunSik,현식</p>
+    <button onclick="stringTest();">클릭</button>
+    <script>
+        function test1(){
+            var tmp = document.getElementById("la1");
+            tmp.innerHTML = "ID : ";
+        }
+        function test2(){
+            var tmp = document.getElementById("pw");
+            tmp.type="password";
+        }
+        function test3(){
+            var tmp = document.getElementById("name");
+            tmp.placeholder = "이름을 입력하세요";
+        }
+        function test4(){
+            var tmp = document.getElementById("addr");
+            tmp.lenght=50;
+            tmp.size=50;
+        }
+        function test5(){
+            var name = document.getElementsByTagName("input");
+            for(var i=0;i<name.length;i++){
+                alert(name[i].value);
+            }
+        }
+        function stringTest(){
+            var obj = document.getElementById("pp");
+            /*obj.innerHTML = obj.innerHTML.toUpperCase();*/
+            /*obj.innerHTML = obj.innerHTML.toLowerCase();*/
+            /*obj.innerHTML = obj.innerHTML.length;*/
+            /*obj.innerHTML = obj.innerHTML.indexOf("식");*/
+            /*obj.innerHTML = obj.innerHTML.lastIndexOf("식");*/
+            /*obj.innerHTML = obj.innerHTML.charAt(3);*/
+            var data = obj.innerHTML.split(",");
+            console.log(data[0]);
+            console.log(data[1]);
+            console.log(data[2]);
+        }
+    </script>
+</body>
+</html>
