@@ -33,8 +33,19 @@
     <input type="text" id="in1">
     <button onclick="func2();">indexOf()</button>
     <hr>
-    <input type="text" id="in2">
     <button onclick="func3();">concat()</button>
+    <hr>
+    <button onclick="func4();">join()</button>
+    <p id="p1">1</p>
+    <hr>
+    <button onclick="func5();">reverse()</button>
+    <hr>
+    <button onclick="func6();">sort()</button>
+    <hr>
+    <button onclick="func7();">push(),pop()</button>
+    <hr>
+    <button onclick="func8();">slice()</button>
+    
     <script>
         function func2(){
             var fruits = ['사과','복숭아','망고','멜론'];
@@ -56,6 +67,67 @@
             var arr4 = ['이윤수',true,false,[9,8,7]];
             var data = arr1.concat(arr2,arr3,arr4);
             console.log(data);
+        }
+        function func4(){
+            /*배열 인자 구분하는 함수*/
+            var arr1 = ['사과','복숭아','망고','멜론'];
+            var arr2 = ['수박','배','딸기'];
+            var arr3 = [1,2,3,4,5,6,7];
+            var arr4 = ['이윤수',true,false,[9,8,7]];
+            var data = arr1.concat(arr2,arr3,arr4);
+            console.log(data);
+            var p1 = document.getElementById("p1");
+            /*구분자*/
+            p1.innerHTML = data.join(' / ');
+        }
+        function func5(){
+            /*원본에도 영향 끼침, 순서역순*/
+            var arr1=[1,2,3,4,5];
+            console.log(arr1);
+            arr1.reverse();
+            console.log(arr1);
+        }
+        function func6(){
+            var arr1=[1,6,8,11,7,4];
+            console.log(arr1);            
+            /*문자열로 바꿔서 정렬*/
+            arr1.sort();
+            /*오름차순*/
+            arr1.sort(sortASC);
+            /*내림차순*/
+            arr1.sort(sortDESC);
+            console.log(arr1);
+        }
+        function sortASC(a,b){
+            return a-b;
+        }
+        function sortDESC(a,b){
+            return b-a;
+        }
+        function func7(){
+            var arr = ['사과','바나나','키위'];
+            console.log(arr);
+            /*제일 뒤에 값 추가*/
+            arr.push('딸기');
+            console.log(arr);
+            /*제일 뒤 값 삭제*/
+            arr.pop();
+            console.log(arr);
+            /*제일 앞에 값 추가*/
+            arr.unshift('딸기');
+            console.log(arr);
+            /*제일 앞 값 삭제*/
+            arr.shift();
+            console.log(arr);
+        }
+        function func8(){
+            var arr = ['사과','복숭아','망고','멜론','바나나'];
+            /*시작점부터 끝점까지 자르기*/
+            var arr1 = arr.slice(1);
+            var arr2 = arr.slice(1,2);
+            console.log(arr);
+            console.log(arr1);
+            console.log(arr2);
         }
     </script>
 </body>

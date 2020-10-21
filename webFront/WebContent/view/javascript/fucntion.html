@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <button onclick="func1();">클릭1</button>
+    <hr>
+    <button onclick="func2('매개변수전달');">클릭2</button>
+    <hr>
+    <button onclick="func3('이번에도 매개변수 전달','test2','test3');">클릭3</button>
+    <hr>
+    <button onclick="clickBtn();">클릭4</button>
+    <hr>
+    <button onclick="func6();">클릭5</button>
+    <hr>
+    <input type="text" id="num1">
+    <input type="text" id="num2">
+    <button onclick="func7();">클릭6</button>
+    <input type="radio" name="gender" onclick="exam();">남자
+    <input type="radio" name="gender" onclick="exam();">여자
+    <br>
+    <p id="p1"></p>
+    <script>
+        /*
+        (function(){
+            alert("한번만 실행되고 다시 실행할 수 없는 함수");
+         })();
+         */
+        function func1(){
+            alert("기본함수");
+            var returnValue = func4();
+            alert(returnValue);
+        }
+        function func2(msg){
+            alert(msg);
+        }
+        //java에선 안되지만 js에선 됨
+        function func3(){
+            alert("test");
+            alert(arguments[0]);
+            alert(arguments[1]);
+            alert(arguments[2]);
+        }
+        
+        var test2 = function(){
+            //익명함수는 선언적함수와 달리 순차적구조로 해서 호출이 가능함
+            //일반적인 함수가 선언적함수
+            alert("익명함수입니다.");
+        }
+        
+        function func4(){
+            return 10;
+        }
+        function func5(){
+            console.log(10);
+        }
+        function inc(){
+            var count=0;
+            //이런 형태는 클로저라고 함(변수노출 안되게하기)
+            //count++;
+            //return count;
+            return function inc2(){
+                count++;
+                return count;
+            }
+        }
+        var incNum = inc();
+        
+        function clickBtn(){
+            //var cnt = inc();
+            var cnt = incNum();
+            console.log(cnt);
+        }
+        
+        function func6(){
+            var str = "http://www.iei.or.kr?name=안녕하세요";
+            console.log(str);
+            var enc = escape(str);
+            console.log(enc);
+            var dec = unescape(str);
+            console.log(dec);
+        }
+        
+        function func7(){
+            //에러인데 어디가 오타인지 모르음
+            var str="document.getElementById('num1').value"+'+';
+            str+="+document.getElementById('num2').value"+'=';
+            str+="+(parseInt(document.getElementById('num1').value)";
+            str+="+(parseInt(document.getElementById('num2').value))";
+            console.log(str);
+            document.getElementById("p1");
+            p1.innerHTML = eval(str);
+        }
+        //호출법
+        //test2();
+        //func1();
+        function exam(){
+            var test=document.getElementsByName("gender");
+            for(var i=0;i<test.length;i++){
+                console.log(test[i].checked);
+            }
+        }
+    </script>
+</body>
+</html>
