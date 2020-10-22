@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <button onclick="func1();">객체 생성1</button>
+    <button onclick="func2();">객체 생성2</button>
+    <button onclick="func3();">in/with</button>
+    <button onclick="func4();">객체 속성 추가/삭제</button>
+    <button onclick="func5();">객체 데이터 추가/출력</button>
+    <button onclick="func6();">객체 배열</button>
+    <button onclick="func7();">생성자 사용</button>
+    <script>
+        function func1(){
+            var testObj = {a:100,b:200};
+            console.log(testObj);
+            testObj.a=300;
+            testObj['b']=400;
+            console.log(testObj);
+        }
+        function func2(){
+            var testObj = {
+                a:100,
+                b:200,
+                c:function(){
+                    alert('테스트');
+                    return "하하하";
+                }
+            };
+            console.log(testObj);
+            //console.log(testObj.c);
+            //console.log(testObj['c']);
+            console.log(testObj.c());
+            //console.log(testObj['c']());
+        }
+        function func3(){
+            var testObj = {a:100,b:200};
+            //in->객체에 해당하는 속성이 있는지 검사
+            console.log('a' in testObj);
+            console.log('c' in testObj);
+            
+            //객체의 속성에 접근가능
+            with(testObj){
+                a=300;
+                b=400;
+            }
+        }
+        function func4(){
+            var testObj = {a:100,b:200};
+            console.log(testObj);
+            testObj.c = 300;
+            console.log(testObj);
+            testObj.d = function(){
+                alert("객체내부함수입니다.");
+            }
+            console.log(testObj);
+            
+            delete(testObj.d);
+            console.log(testObj);
+        }
+        function func5(){
+            var name = prompt("이름 입력");
+            var age = prompt("나이 입력");
+            var addr = prompt("주소입력");
+            var object ={
+                name:name,
+                age:age,
+                addr:addr,
+                print:function(){
+                    var str = "이름 : "+this.name+"\n나이 : "+this.age+"\n주소 : "+this.addr;
+                    return str;
+                }
+            }
+            alert(object.print());
+            console.log(object);
+        }
+        function func6(){
+            //var objectArr = new Array();
+            //같은뜻
+            var objectArr = [];
+            var test1 = {a:100,b:200};
+            var test2 = {name:"이윤수", addr:"서울"};
+            var test3 = {a:300,b:400};
+            
+            objectArr.push(test1);
+            objectArr.push(test2);
+            objectArr.push(test3);
+            
+            console.log(objectArr);
+            alert(objectArr[1].addr);
+        }
+        //생성자는 대문자로 씀
+        function Student(name,age,address){
+            this.name = name;
+            this.age = age;
+            this.address = address;
+        }
+        function func7(){
+            var s = new Student('이윤수',20,'서울');
+            console.log(s);
+        }
+    </script>
+</body>
+</html>

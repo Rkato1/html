@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<script>
+    function func1() {
+        window.open("https://www.w3schools.com/jsref/met_win_open.asp");
+    }
+
+    function func2() {
+        var window1 = window.open();
+        //3초지나면 꺼짐
+        var intervalId = window.setTimeout(function() {
+            window1.close();
+        }, 3 * 1000);
+        //setTimeout취소
+        //window.clearTimeout(intervalId);
+    }
+
+    function func3() {
+        //특정 시간마다 반복
+        var intervalId = window.setInterval(function() {
+            console.log("인터벌함수 실행");
+        }, 3 * 1000);
+        window.setTimeout(function() {
+            window.clearInterval(intervalId);
+        }, 10 * 1000);
+    }
+
+    var time1;
+
+    function func4() {
+        var p1 = document.getElementById("p1");
+        time1 = window.setInterval(function() {
+            var date = new Date();
+            p1.innerHTML = date.getHours() + " : " + date.getMinutes() + " : " + date.getSeconds();
+        }, 1 * 1000);
+    }
+
+    function func5() {
+        window.clearInterval(time1);
+    }
+
+    //스톱워치
+    var time2;
+    var count = 0;
+
+    function func6() {
+        var p2 = document.getElementById("p2");
+
+        time2 = window.setInterval(function() {
+            var date = new Date();
+            var mili = date.getMilliseconds();
+            p2.innerHTML = count + " : " + mili;
+            if (mili >= 990) {
+                count++;
+                mili=0;
+            }
+
+        }, 10);
+        //0.01s
+    }
+
+    function func7() {
+        window.clearInterval(time2);
+    }
+</script>
+
+<style>
+    .pp {
+        border: 5px solid black;
+        height: 200px;
+        width: 500px;
+        font-size: 70px;
+        color: blue;
+    }
+</style>
+
+<body>
+   <div name="top"></div>   
+    <button onclick="func11()">아래로</button>
+    <button onclick="func1()">window.open()</button>
+    <button onclick="func2()">setTimeout</button>
+    <button onclick="func3()">setInterval</button>
+    <br>
+    <p id="p1" class="pp"></p>
+    <button onclick="func4()">시작</button>
+    <button onclick="func5()">중단</button>
+    <br>
+    <p id="p2" class="pp"></p>
+    <button onclick="func6()">시작</button>
+    <button onclick="func7()">중단</button>
+    <script>
+        window.onload = function(){
+            p3 = document.getElementById("p3");
+        }
+        function func8(){
+            //var p3 = document.getElementById("p3");
+            //위거 주석처리하고 전역변수로 빼면 에러남(값이 안들어 간상태기 때문)
+            console.log(p3);
+            p3.innerHTML="버튼클릭!";
+        }
+        function func9(){
+            var p4 = document.getElementById("p4");
+            var str = "";
+            str += "화면 높이값 : "+screen.height+"<br>";
+            str += "화면 너비값 : "+screen.width+"<br>";
+            str += "실제 사용가능한 높이값 : "+screen.availHeight+"<br>";
+            str += "실제 사용가능한 너비값 : "+screen.availWidth+"<br>";
+            str += "사용가능한 색상수 : "+screen.colorDepth+"<br>";
+            str += "한 픽셀당 비트 수 : "+screen.pixelDepth+"<br>";
+            p4.innerHTML=str;
+        }
+        function func10(){
+            location.hash="top";
+        }
+        function func11(){
+            location.hash="bottom";
+        }
+        function func12(){
+            location.href="https://www.naver.com";
+        }
+        function func13(){
+            location.reload();
+        }
+        function func14(){
+            //새로 창을 load하는 개념
+            location.assign("https://www.naver.com");
+        }
+        function func15(){
+            //뒤로가기가 안됨
+            //현재창을 대체해버림
+            location.replace("https://www.naver.com");
+        }
+        //위도 경도저장
+        var lat;
+        var lng;
+        window.onload=function(){
+            navigator.geolocation.getCurrentPosition(showYourLocation);
+        }
+        
+        function showYourLocation(pos){
+            lat = pos.coords.latitude;
+            lng = pos.coords.longitude;
+        }
+        
+        function func16(){
+            console.log("위도="+lat);
+            console.log("경도="+lng);
+        }
+    </script>
+    <p id="p3"></p>
+    <button onclick="func8()">클릭</button>
+    <hr>
+    <p id="p4" class="pp" style="font-size: 15px;"></p>
+    <button onclick="func9()">screen객체</button>
+    <div name="bottom"></div>
+    <button onclick="func10()">위로</button>
+    <button onclick="func12()">네이버</button>
+    <button onclick="func13()">새로고침</button>
+    <button onclick="func14()">assign</button>
+    <button onclick="func15()">replace</button>
+    <hr>
+    <p id="pp1">
+        <button onclick="func16()">위경도확인</button>
+    </p>
+</body></html>

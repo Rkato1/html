@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<style>
+    .div {
+        border: 5px solid black;
+        height: 500px;
+        width: 800px;
+    }
+</style>
+<script>
+    function func1() {
+        var d1 = document.getElementById("d1");
+        //태그생성
+        //1.요소노드생성
+        var h3 = document.createElement("h3");
+        var a = document.createElement("a");
+        //이거로넣으면 무조건 텍스트로 동작함
+        //2.텍스트노드생성
+        var text = document.createTextNode("추가문구");
+        //자식으로 추가
+        //3.요소노드 텍스트노드 자식으로 추가
+        a.appendChild(text);
+        h3.appendChild(a);
+        //태그로 넣어야 태그로 동작함
+        //h3.innerHTML +="<a href='#'>추가문구</a>";
+        //4.html본문에 요소노드 추가
+        d1.appendChild(h3);
+    }
+    function func2() {
+        var d1 = document.getElementById("d1");
+        //1.img태그 생성
+        var img = document.createElement("img");
+        //2.속성지정
+        img.src="../html2/004.jpg";
+        //존재하는 속성만 사용가능
+        //img.width="200";
+        //img.height="300";
+        //존재하지 않는 속성을 강제로 지정
+        img.setAttribute("test","2");
+        console.log(img.getAttribute("test"));
+        //3.html본문에 추가
+        d1.appendChild(img);
+    }
+    function func3() {
+        var d1 = document.getElementById("d1");
+        var p = document.createElement("p");
+        p.style.border="5px solid red";
+        p.style.backgroundColor="magenta";
+        p.style.width="100px";
+        p.style.height="100px";
+        p.setAttribute("id","pp");
+        d1.appendChild(p);
+    }
+    function func4() {
+        var d1 = document.getElementById("d1");
+        var p = document.getElementById("pp");
+        d1.removeChild(p);
+    }
+    function func5() {
+        var p = document.getElementById("pp");
+        p.remove();
+    }
+</script>
+
+<body>
+    <div id="d1" class="div"></div>
+    <button onclick="func1();">클릭1</button>
+    <button onclick="func2();">클릭2</button>
+    <button onclick="func3();">삭제할 요소 추가</button>
+    <button onclick="func4();">삭제(부모에서 삭제)</button>
+    <button onclick="func5();">삭제(해당 객체 삭제)</button>
+</body></html>
