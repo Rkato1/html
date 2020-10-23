@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<style>
+    .centerform {
+        margin: 0 auto;
+        width: 80%;
+        height: 500px;
+    }
+
+    #process {
+        width: 100%;
+        height: 10%;
+    }
+
+    #process>p {
+        margin: 0px;
+        padding: 0px;
+        width: 25%;
+        height: 100%;
+        float: left;
+        text-align: center;
+        font-weight: bold;
+        font-size: 15px;
+        border: 1px solid gray;
+        box-sizing: border-box;
+        line-height: 300%;
+    }
+
+    #content {
+        width: 100%;
+        height: 80%;
+        margin-top: 10%;
+    }
+
+    #content>* {
+        width: 100%;
+        height: 100%;
+    }
+
+    .blue {
+        color: blue;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    #chkcontent {
+        display: block;
+    }
+
+    #needinfocontent {
+        display: none;
+    }
+
+    #subinfocontent {
+        display: none;
+    }
+
+    #finishcontent {
+        display: none;
+    }
+
+    #btndiv {
+        text-align: center;
+    }
+
+    .btn {
+        background-color: navy;
+        color: white;
+    }
+
+    #list {
+        list-style-type: none;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #middlelist {
+        width: 90%;
+        font-weight: normal;
+        border: 1px solid black;
+        font-size: 12px;
+    }
+
+    #needinfocontent table {
+        margin: 0 auto;
+        border-top: 3px solid purple;
+        border-bottom: 3px solid purple;
+    }
+
+    #subinfocontent table {
+        margin: 0 auto;
+        border-top: 3px solid purple;
+        border-bottom: 3px solid purple;
+    }
+
+    input[type=radio] {
+        display: none;
+    }
+
+    label {
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        border: 2px solid navy;
+        box-sizing: border-box;
+        background-color: white;
+        color: navy;
+    }
+
+    input[type=radio]:checked+label {
+        background-color: aquamarine;
+    }
+
+    #loginform {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #loginform>* {
+        width: 30%;
+    }
+
+    #loginform>p {
+        margin: 0 auto;
+        text-align: left;
+    }
+</style>
+
+<body>
+    <h2>단계가 있는 회원가입</h2>
+    <p>최초에 전역변수에 배열을 선언하고 중복체크용 아이디 5개 push하고 시작</p>
+    <hr>
+    <div class="centerform">
+        <div id="process">
+            <p id="chk">약관확인</p>
+            <p id="needinfo">필수정보입력</p>
+            <p id="subinfo">상세정보입력</p>
+            <p id="finish">가입완료</p>
+        </div>
+        <div id="content">
+            <div id="chkcontent">
+                <p id="middle" class="blue">이용약관 확인 및 동의</p>
+                <ul id="list">
+                    <li><input type="checkbox" name="all" onclick="chk();">이용약관 전체체크</li><br>
+                    <li><input type="checkbox" name="need">개인정보 수집 및 이용에 동의<span class="blue">(필수)</span>
+                        <ul id="middlelist">
+                            <li>수집 항목 : 이름, 휴대전화번호, 생년월일, 비밀번호</li>
+                            <li>수집ㆍ이용목적 : 이름, 휴대전화번호, 생년월일, 비밀번호</li>
+                            <li>보유 및 이용기간 : 회원탈퇴 시 까지</li>
+                        </ul>
+                    </li>
+                    <li><input type="checkbox" name="select">개인정보 수집 및 이용에 동의<span class="blue">(선택)</span>
+                        <ul id="middlelist">
+                            <li>수집 항목 : 이름, 휴대전화번호, 생년월일, 비밀번호</li>
+                            <li>수집ㆍ이용목적 : 이름, 휴대전화번호, 생년월일, 비밀번호</li>
+                            <li>보유 및 이용기간 : 회원탈퇴 시 까지</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="btndiv">
+                    <button class="btn" onclick="next(this)">다음</button>
+                </div>
+            </div>
+            <div id="needinfocontent">
+                <p id="middle" class="blue">필수정보입력</p>
+                <table>
+                    <tr>
+                        <td>아이디</td>
+                        <td><input type="text" id="id"><span id="spanid"></span></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호</td>
+                        <td><input type="password" id="pw"></td>
+                    </tr>
+                    <tr>
+                        <td>비밀번호 확인</td>
+                        <td><input type="password" id="pw_re"><span id="spanpw"></span></td>
+                    </tr>
+                    <tr>
+                        <td>이름</td>
+                        <td><input type="text" id="name"><span id="spanname"></span></td>
+                    </tr>
+                </table>
+                <br>
+                <div id="btndiv">
+                    <button class="btn" onclick="next2()">다음</button>
+                </div>
+            </div>
+            <div id="subinfocontent">
+                <p id="middle" class="blue">추가정보입력</p>
+                <table>
+                    <tr>
+                        <td>이메일</td>
+                        <td><input type="text" id="email1">@<input type="text" id="email2">
+                            <select id="select">
+                                <option>naver.com</option>
+                                <option>nate.com</option>
+                                <option>hanmail.net</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>성별</td>
+                        <td><input type="radio" name="gender" id="m"><label for="m">남자</label><input type="radio" name="gender" id="f"><label for="f">여자</label></td>
+                    </tr>
+                    <tr>
+                        <td>자기소개</td>
+                        <td><textarea name="content" rows="10" cols="20" style="resize:none"></textarea></td>
+                    </tr>
+                </table>
+                <br>
+                <div id="btndiv">
+                    <button class="btn" onclick="next3()">다음</button>
+                </div>
+            </div>
+
+            <div id="finishcontent">
+                <p id="middle" class="blue">가입을 축하합니다.</p>
+                <br>
+                <button class="btn" onclick="alert('여기있잖아;');">로그인하기</button>
+                <div id="loginform">
+                    <p>아이디</p><br>
+                    <input type="text" id="loginid"><br>
+                    <p>비밀번호</p><br>
+                    <input type="password" id="loginpw"><br><br>
+                    <button class="btn" onclick="login();">로그인</button><br><br>
+                    <button class="btn" onclick="cancel();">취소</button>
+                </div>
+            </div>
+            <script>
+                var page1 = document.getElementById("chkcontent");
+                var page2 = document.getElementById("needinfocontent");
+                var page3 = document.getElementById("subinfocontent");
+                var page4 = document.getElementById("finishcontent");
+                var ids = new Array();
+                ids.push('u1');
+                ids.push('u2');
+                ids.push('u3');
+                ids.push('u4');
+                ids.push('u5');
+
+                function chk() {
+                    var all = document.getElementsByName("all")[0];
+                    var need = document.getElementsByName("need")[0];
+                    var select = document.getElementsByName("select")[0];
+                    if (all.checked) {
+                        need.checked = true;
+                        select.checked = true;
+                    } else {
+                        need.checked = false;
+                        select.checked = false;
+                    }
+                }
+
+                function next() {
+                    var need = document.getElementsByName("need")[0];
+                    //console.log(need);
+                    if (need.checked) {
+                        console.log(page1);
+                        page1.style.display = "none";
+                        page2.style.display = "block";
+                    } else {
+                        alert("필수 항목 체크");
+                    }
+                }
+
+                function next2() {
+                    //중복체크루틴
+                    var id = document.getElementById("id");
+                    var pw = document.getElementById("pw");
+                    var pw_re = document.getElementById("pw_re");
+                    var name = document.getElementById("name");
+
+                    var spanid = document.getElementById("spanid");
+                    var spanpw = document.getElementById("spanpw");
+                    var spanname = document.getElementById("spanname");
+                    spanid.style.color = "red";
+                    spanpw.style.color = "red";
+                    spanname.style.color = "red";
+                    var btemp = true;
+
+                    if (id.value == "") {
+                        var intervalId = window.setInterval(function() {
+                            spanid.innerHTML = "아이디가 공백입니다.";
+                        }, 1);
+                        window.setTimeout(function() {
+                            window.clearInterval(intervalId);
+                            spanid.innerHTML = "";
+                        }, 2 * 1000);
+                        btemp = false;
+                    }
+                    for (var i = 0; i < ids.length; i++) {
+                        //console.log(ids[i]);
+                        if (ids[i] == id.value) {
+                            var intervalId = window.setInterval(function() {
+                                spanid.innerHTML = "이미 사용중인 아이디입니다.";
+                            }, 1);
+                            window.setTimeout(function() {
+                                window.clearInterval(intervalId);
+                                spanid.innerHTML = "";
+                            }, 2 * 1000);
+                            btemp = false;
+                        }
+                    }
+                    if (pw.value == "" || pw_re.value == "") {
+                        var intervalId = window.setInterval(function() {
+                            spanpw.innerHTML = "비밀번호가 공백입니다.";
+                        }, 1);
+                        window.setTimeout(function() {
+                            window.clearInterval(intervalId);
+                            spanpw.innerHTML = "";
+                        }, 2 * 1000);
+                        btemp = false;
+                    }
+                    if (pw.value != pw_re.value) {
+                        var intervalId = window.setInterval(function() {
+                            spanpw.innerHTML = "비밀번호가 일치하지 않습니다.";
+                        }, 1);
+                        window.setTimeout(function() {
+                            window.clearInterval(intervalId);
+                            spanpw.innerHTML = "";
+                        }, 2 * 1000);
+                        btemp = false;
+                    }
+                    if (name.value == "") {
+                        var intervalId = window.setInterval(function() {
+                            spanname.innerHTML = "이름이 공백입니다.";
+                        }, 1);
+                        window.setTimeout(function() {
+                            window.clearInterval(intervalId);
+                            spanname.innerHTML = "";
+                        }, 2 * 1000);
+                        btemp = false;
+                    }
+                    if (btemp) {
+                        ids.push(id.value);
+                        for (var i = 0; i < ids.length; i++) {
+                            console.log(ids[i]);
+                        }
+                        page2.style.display = "none";
+                        page3.style.display = "block";
+                    }
+                }
+                var select = document.getElementById("select");
+                select.onchange = function() {
+                    var email2 = document.getElementById("email2");
+                    email2.value = select.value;
+                    //alert(select.value);
+                }
+
+                function next3() {
+                    var email1 = document.getElementById("email1");
+                    var email2 = document.getElementById("email2");
+                    var m = document.getElementsByName("gender")[0];
+                    var f = document.getElementsByName("gender")[1];
+                    var content = document.getElementsByName("content")[0];
+                    if (email1.value != "" && email2.value != "" && (m.checked || f.checked)) {
+                        page3.style.display = "none";
+                        page4.style.display = "block";
+                    }else{
+                        alert("추가정보체크");
+                    }
+                }
+
+                function login() {
+                    var id = document.getElementById("loginid");
+                    var pw = document.getElementById("loginpw");
+                    console.log("id : " + id.value);
+                    console.log("pw : " + pw.value);
+                }
+
+                function cancel() {
+                    alert("로그인취소");
+                }
+            </script>
+        </div>
+    </div>
+</body></html>

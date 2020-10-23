@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<style>
+    #div1{
+        border:5px solid black;
+        height:800px;
+        width:1000px;
+    }
+</style>
+<script>
+    var count=0;
+    function add(){
+        var name = prompt("이름 입력 : ");
+        var age = prompt("나이 입력 : ");
+        var addr = prompt("주소 입력 : ");
+        
+        var table = document.getElementById("member");
+        var tr = document.createElement("tr");
+        var tdname = document.createElement("td");
+        var tdage = document.createElement("td");
+        var tdaddr = document.createElement("td");
+        var tdbtn = document.createElement("td");
+        var btn = document.createElement("button");
+        var text = document.createTextNode(name);
+        var text1 = document.createTextNode(age);
+        var text2 = document.createTextNode(addr);
+        var text3 = document.createTextNode("삭제");
+        tdname.appendChild(text);
+        tdage.appendChild(text1);
+        tdaddr.appendChild(text2);
+        btn.appendChild(text3);
+        //btn.setAttribute("name","del");
+        btn.setAttribute("onclick","del("+count+")");
+        tdbtn.appendChild(btn);
+        tr.appendChild(tdname);
+        tr.appendChild(tdage);
+        tr.appendChild(tdaddr);
+        tr.appendChild(tdbtn);
+        tr.id = "tr"+count;
+        table.appendChild(tr);
+        count++;
+    }
+    
+    function del(num){
+        //몇번째 행인지 알아야 지우는데 그걸 못찾는중
+        var deltr = document.getElementById("tr"+num);
+        deltr.remove();
+        //var m = document.getElementById("member");
+        //var btn = document.getElementsByName("del");
+        //var param;
+        /*
+        for(var i=0;i<btn.length;i++){
+            //이 안에 포함되어있다
+            if(){
+               param = i;
+            }
+        }
+        */
+        //console.log(m.children[1].children);
+        //console.log(btn[param].parentNode.parentNode);
+        //m.removeChild(btn[param].parentNode.parentNode);
+    }
+    </script>
+<center>
+    문제1. 추가 버튼을 클릭하면 이름,나이,주소를 입력 받은 후 테이블에 추가하도록 하여라.
+    
+    <table border="1" id="member">
+        <tr><th>이름</th><th>나이</th><th>주소</th><th>상태</th></tr>     
+    </table>
+
+<button onclick="add();">추가</button>
+    </center>
+
+
+</body>
+</html>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+</html>

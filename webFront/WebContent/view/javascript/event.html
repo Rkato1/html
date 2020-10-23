@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <script>
+        //인라인 이벤트 모델
+        //선언적함수
+        function func1() {
+            alert('첫번째함수');
+        }
+
+        //onload안하면 밑 두개는 안됨
+        //고전이벤트
+        window.onload = function() {
+            //나름 최근방식
+            var div2 = document.getElementById("div2");
+            div2.onclick = function() {
+                alert('두번째함수');
+            };
+
+            //구식방식
+            var div3 = document.getElementById("div3");
+            div3.addEventListener("click", function() {
+                alert('세번째함수');
+            });
+            var test = document.getElementsByClassName("test");
+            for (var i = 0; i < test.length; i++) {
+                test[i].onclick = function() {
+                    alert(this.innerHTML);
+                }
+            }
+        }
+    </script>
+    <!--div id="div" onclick="alert('1111');">111</div-->
+    <div id="div" onclick="func1();">111</div>
+    <div id="div2">222</div>
+    <div id="div3">333</div>
+
+    <div class="test">44</div>
+    <div class="test">55</div>
+    <div class="test">66</div>
+    <hr>
+    <script>
+        function func2(msg){
+            var event = window.event;
+            alert(msg);
+            //연속 출력막기
+            event.stopPropagation();
+            //ie전용(구버전, 현버전은 이상없이 위코드로 된다함)
+            event.cancelBubble = true;
+        }
+        function goNaver(){
+            if(confirm("네이버로 이동하시겠습니까?")){
+                location.href="https://www.naver.com";
+            }
+        }
+        function chk(){
+            var id = document.getElementsByName("id")[0].value;
+            if(id != 'user01'){
+                return false;
+            }
+        }        
+    </script>
+    <style>
+        .div{
+            border: 1px solid black;
+            width: 80%;
+            height: 200px;
+            text-align: center;
+        }
+        .re{
+            background-color: red;
+        }
+        .or{
+            background-color: orange;
+        }
+        .yel{
+            background-color: yellow;
+        }
+        .gr{
+            background-color: green;
+        }
+        .bl{
+            background-color: blue;
+        }
+        .navy{
+            background-color: navy;
+        }
+        .pur{
+            background-color: purple;
+        }
+    </style>
+    <div onclick="func2('빨간 div');" class="div re">
+        <div onclick="func2('주황 div');" class="div or">
+            <div onclick="func2('노랑 div');" class="div yel">
+                <div onclick="func2('초록 div');" class="div gr">
+                    <div onclick="func2('파랑 div');" class="div bl">
+                        <div onclick="func2('남색 div');" class="div navy">
+                            <div onclick="func2('보라 div');" class="div pur">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!--a태그지만 취소누르면 이동을 안시키게 막음-->
+    <a href="javascript:void(0)" onclick="goNaver();">네이버</a>
+    
+    <form action="../html/layout.html" method="post">
+        <input type="text" name="id" id="in1"><br>
+        <input type="password" name="pass" id="in2"><span id="msg"></span><br>
+        <input type="submit" value="로그인" onclick="return chk();"><br>
+    </form>
+    <div id="dd">이벤트테스트</div>
+    <script>
+        var in1 = document.getElementById("in1");
+        var in2 = document.getElementById("in2");
+        in1.onfocus = function(){
+            in1.style.backgroundColor='red';
+        }
+        in1.onblur = function(){
+            in1.style.backgroundColor='white';
+        }
+//        in2.onchange = function(){
+//            var pw = in1.value;
+//            var pw_re = in2.value;
+//            if(pw != pw_re){
+//                alert("패스워드가 다릅니다.");
+//                in2.style.border = "1px solid red";
+//            }
+//        }
+        in2.onkeyup = function(){
+            var pw = in1.value;
+            var pw_re = in2.value;
+            var msg = document.getElementById("msg");
+            if(pw != pw_re){
+                msg.innerHTML = "패스워드를 확인하세요.";                
+                in2.style.border = "1px solid red";
+                msg.style.color = "red";
+            }else{
+                msg.innerHTML = "패스워드가 일치합니다.";
+                in2.style.border = "1px solid green";
+                msg.style.color = "green";
+            }
+        }
+        var dd = document.getElementById("dd");
+        //밑에가 빠져야 동작함
+        dd.ondblclick = function(){
+            alert("더블클릭이벤트");
+        }
+        dd.onclick = function(){
+            alert("클릭이벤트");
+        }
+        //css에서 먹이는 것과 다르게 계속 적용되서 반대 작용을 걸어줘야함
+        dd.onmouseenter = function(){
+            dd.style.color="red";
+        }
+        dd.onmouseover = function(){
+            dd.style.color="blue";
+        }
+        dd.onmouseout = function(){
+            dd.style.color="black";
+        }
+    </script>
+</body></html>
