@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+<body>
+    <ul>
+        <li>coffee</li>
+        <li>milk</li>
+        <li>soda</li>
+    </ul>
+    <button id="btn1">목록 값 가져오기</button>
+    <script>
+        //each => for문개념
+        var btn1 = $('#btn1');
+        btn1.click(function(){
+           var arr = $("li");
+            //item은 js객체
+            $.each(arr,function(index,item){
+            //같은 뜻
+            //arr.each(function(index,item){
+                //alert('인덱스번호 : '+index+' / 값 : '+item.innerHTML);
+                //같은 뜻
+                alert('인덱스번호 : '+index+' / 값 : '+$(item).html());
+            });
+        });
+    </script>
+</body>
+</html>

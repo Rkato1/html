@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <p id="p1">테스트1</p>
+    <p class="pp">테스트2</p>
+    <p class="pp">테스트3</p>
+    <p class="pp">테스트4</p>
+    <input type="text"><br>
+    <button onclick="func1()">클릭(js)</button>
+    <button onclick="func2()">클릭(jQuery)</button>
+    <button onclick="func3()">클릭(js)</button>
+    <button onclick="func4()">클릭(jQuery)</button>
+    <button onclick="func5()">클릭(value)</button>
+    <hr>
+    <div>
+        <ul>
+            <li><h3>테스트1</h3></li>
+            <li>테스트2</li>
+            <li>테스트3</li>
+            <li>테스트4</li>            
+        </ul>
+        <h3>테스트5</h3>
+    </div>
+    <input type="text" name="first" value="사과"><br>
+    <input type="text" name="second" value="키위"><br>
+    <input type="password" name="third" value="바나나"><br>
+    <input type="password" name="fourth" value="포도"><br>
+    <input type="checkbox" name="hobby" value="독서">독서
+    <input type="checkbox" name="hobby" value="운동" checked>운동
+    <hr>
+    <table>
+        <tr>
+            <th>이름</th><th>혈액형</th><th>나이</th>
+        </tr>
+        <tr>
+            <td>1</td><td>A</td><td>4</td>
+        </tr>
+        <tr>
+            <td>2</td><td>B</td><td>3</td>
+        </tr>
+        <tr>
+            <td>4</td><td>C</td><td>5</td>
+        </tr>
+        <tr>
+            <td>3</td><td>O</td><td>1</td>
+        </tr>
+        <tr>
+            <td>5</td><td>AB</td><td>2</td>
+        </tr>
+    </table>
+    <script>
+        function func1() {
+            var id = document.getElementById("p1");
+            id.innerHTML = "자바스크립트로 인한 변경";
+        }
+
+        function func2() {
+            //jQuery
+            //js는 js문법대로 jQuery는 jQuery문법대로 써야함, 혼용안됨.
+            var id = $("#p1");
+            id.css('color','red');
+            id.html("jQuery로 인한 변경");
+        }
+
+        function func3() {
+            var pp = document.getElementsByClassName("pp");
+            for (var i = 0; i < pp.length; i++) {
+                pp[i].innerHTML = "자바스크립트로 인한 변경";
+            }
+        }
+
+        function func4() {
+            //jQuery
+            //js는 js문법대로 jQuery는 jQuery문법대로 써야함, 혼용안됨.
+            //        var pp=$(".pp");
+            //        pp.html("jQuery로 인한 변경");
+            //위와 같은 뜻
+            $(".pp").html("jQuery로 인한 변경");
+        }
+        function func5(){
+            console.log($("input").val());
+            $("input").val("value테스트");
+        }
+
+        //window.onload와 같음
+        $(document).ready(function(){
+            $("div h3").css('color','red');
+            $("div>h3").css('background-color','blue');
+            
+            $('input[name=first]').css('color','green');
+            $('input:text').css('background','aqua');
+            //위와 같은 뜻, type만 : 로 대체 가능
+            //$('input[type=text]').css('background','aqua');
+            $('input:password').css("color","yellowgreen");
+            console.log($("input:checked").val());
+            
+//            //홀수
+//            $('tr:odd').css("color","red");
+//            //짝수
+//            $('tr:even').css("color","blue");
+//            //1번째
+//            $('tr:first').css("color","white");
+//            $('tr:first').css("background","black");
+//            //마지막
+//            $('tr:last').css("background","black");
+            
+            $('tr:eq(0)').css("background","black").css('color','white');
+            //초과개념(n번 초과부터 모두)
+            //$('tr:gt(1)').css("color",'red');
+            //미만개념(n번 초과부터 모두)
+            //$('tr:lt(1)').css("background",'aqua');
+            $('td:nth-child(3n+1)').css('background-color','yellow');
+        });
+    </script>
+</body>
+
+</html>

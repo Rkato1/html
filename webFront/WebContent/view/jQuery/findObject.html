@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+<body>
+    <style>
+        .ancestors *,
+        .descendants *,
+        .sibilings * {
+            display: block;
+            border: 1px solid lightgray;
+            color: lightgray;
+            padding: 5px;
+            margin: 15px;
+        }
+
+    </style>
+    <script>
+        $(document).ready(function() {
+            var h3 = $('h3');
+            h3.css("color", 'red');
+            h3.first().css('background-color', 'yellow');
+            h3.last().css('background-color', 'gray');
+            h3.eq(2).css('background-color', 'magenta');
+            h3.filter(".hh").css('background-color', 'blue');
+            h3.not(".hh").css('font-weight', '100');
+        });
+
+    </script>
+    <h3>header-0</h3>
+    <h3 class="hh">header-1</h3>
+    <h3 class="hh">header-2</h3>
+    <h3>header-3</h3>
+    <h2 class="hh">header-00</h2>
+    <hr>
+    <div class="ancestors">
+        <div style="width: 500px">div:500px(great grand parent)
+            <ul>ul(grand parent)
+                <li>li(direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+        <div style="width: 500px">div:500px(grand parent)
+            <p>p(direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var span = $(".ancestors span");
+            //직속부모만
+            span.parent().css("border", '2px solid red');
+            //최상위 부모까지 계속
+            //span.parents().css("border",'2px solid red');
+            //div전까지만 적용
+            span.parentsUntil('div').css("border", '2px solid red');
+
+            var span2 = $(".descendants");
+            //직계자손만
+            span2.children().css("border", '2px solid red');
+            //직계 중 해당 클래스에만
+            span2.children('.child1').css("border", '2px solid green');
+            //후손 중 span태그만
+            span2.find('span').css("border", '2px solid red');
+            //자손 후손 다 포함해서 child1클래스만
+            span2.find('.child1').css("border", '2px solid blue');
+
+            var h2 = $('.sibilings h2');
+            //형제개념이니까 자기자신은 제외
+            //h2.siblings().css('border','2px solid green');
+            //바로 다음요소 단 하나
+            //h2.next().css('border','5px solid green');
+            //바로 다음부터 전부
+            //h2.nextAll().css('border','5px solid green');
+            //바로 다음부터 h6전까지
+            //h2.nextUntil('h6').css('border','5px solid green');
+            //바로 전것만
+            //h2.prev().css('border','5px solid green');
+            //바로 전거부터 끝까지
+            //h2.prevAll().css('border','5px solid green');
+            //바로 전거부터 조건태그 전까지
+            //h2.prevUntil('p').css('border','5px solid green');
+            //중복은 되지만 이렇게 안씀
+            //h2.next().next().next().next().css('border','5px solid green');
+            //위와 같음
+            //h2.parent().children().last().css('border','5px solid green');
+
+            var isH2 = $('.isTest>h2');
+            for (var i = 0; i < isH2.length; i++) {
+                //is, 해당요소가 가지고 있는지 여부검사
+                if (isH2.eq(i).is(".select")) {
+                    isH2.eq(i).css("color", 'red');
+                }
+            }
+        });
+
+    </script>
+
+    <hr>
+    <hr>
+    <hr>
+    <div class="descendants" style="width: 500px">
+        <p class="child1">p(child)
+            <span class="child1">
+                span(grand child)
+            </span>
+        </p>
+        <p class="child2">p(child)
+            <span>span(grand child)</span>
+        </p>
+    </div>
+
+    <hr>
+    <hr>
+    <hr>
+    <div class="sibilings" style="width: 500px">
+        <div>div(parent)
+            <p>p</p>
+            <span>span</span>
+            <h2>h2</h2>
+            <h3>h3</h3>
+            <h4>h4</h4>
+            <h5>h5</h5>
+            <h6>h6</h6>
+            <p>p</p>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <hr>
+    <div class="isTest">
+        <h2 class="select">테스트</h2>
+        <h2>테스트</h2>
+        <h2>테스트</h2>
+        <h2 class="select">테스트</h2>
+    </div>
+    <hr><hr><hr>    
+</body>
+
+</html>
