@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
 </head>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
 <body>
     <ul>
         <li>coffee</li>
@@ -12,20 +14,206 @@
         <li>soda</li>
     </ul>
     <button id="btn1">목록 값 가져오기</button>
+    <hr>
+    <hr>
+    <hr>
+    <div class="div">테스트1</div>
+    <div class="div">테스트2</div>
+    <div class="div">테스트3</div>
+    <div class="div">테스트4</div>
+    <div class="div">테스트5</div>
+    <div style="clear: left">
+        <div class="content">내용1</div>
+        <div class="content">내용2</div>
+        <div class="content">내용3</div>
+        <div class="content">내용4</div>
+        <div class="content">내용5</div>
+    </div>
+    <button onclick="func1()">addClass</button>
+    <button onclick="func2()">removeClass</button>
+    <hr>
+    <img src="../html2/004.jpg" width="250" height="300">
+    <br>
+    <button id='btn2'>크기확인</button>
+    <button id='btn3'>사이즈 늘리기</button>
+    <button id='btn4'>속성삭제</button>
+    <hr>
+    <h1 id='h1'><p>테스트메시지</p></h1>
+    <div id="ddd"></div>
+    <button id='btn5'>html메소드</button>
+    <button id='btn6'>text메소드</button>
+    <button id='btn7'>html메소드로 추가</button>
+    <button id='btn8'>text메소드로 추가</button>
+    <hr>
+    <div>
+        <p id="p1">test1</p>
+        <p id="p2">test2</p>
+        <p id="p3">test3</p>
+        <p id="p4">test4</p>
+    </div>
+    <button id='btn11'>appendTo</button>
+    <button id='btn12'>prependTo</button>
+    <button id='btn13'>insertAfter</button>
+    <button id='btn14'>insertBefore</button>
+    <button id='btn21'>append</button>
+    <button id='btn22'>prepend</button>
+    <button id='btn23'>After</button>
+    <button id='btn24'>Before</button>
+    <hr><hr><hr>
+    <div id="removeTest">
+        <h1>test1</h1>
+        <h1>test2</h1>
+        <h1>test3</h1>
+    </div>
+    <button id="btn31">삭제(본인삭제)</button>
+    <button id="btn32">삭제(부모에서 삭제)</button>
+    <hr><hr><hr>
+    <div id="copyTest">
+        <h1>test1</h1>
+        <h2>test2</h2>
+        <div></div>
+    </div>
+    <button id="btn33">객체 이동</button>
+    <button id="btn34">객체 복사</button>
+    <style>
+        .div {
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        .select {
+            background-color: yellow;
+        }
+
+        .content {
+            width: 758px;
+            height: 300px;
+            border: 1px solid black;
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
     <script>
         //each => for문개념
         var btn1 = $('#btn1');
-        btn1.click(function(){
-           var arr = $("li");
+        btn1.click(function() {
+            var arr = $("li");
             //item은 js객체
-            $.each(arr,function(index,item){
-            //같은 뜻
-            //arr.each(function(index,item){
+            $.each(arr, function(index, item) {
+                //같은 뜻
+                //arr.each(function(index,item){
                 //alert('인덱스번호 : '+index+' / 값 : '+item.innerHTML);
                 //같은 뜻
-                alert('인덱스번호 : '+index+' / 값 : '+$(item).html());
+                alert('인덱스번호 : ' + index + ' / 값 : ' + $(item).html());
+            });
+        });
+
+        $('document').ready(function() {
+            $('.div').click(function() {
+                $('.div').removeClass("select");
+                $(this).addClass("select");
+                //각 인자의 번호에 접근
+                var idx = $('.div').index(this);
+                console.log(idx);
+                $('.content').removeClass('show');
+                $('.content').eq(idx).addClass('show');
+            });
+        });
+
+        function func1() {
+            $('.div').addClass("select");
+        }
+
+        function func2() {
+            $('.div').removeClass("select");
+        }
+
+        $(function() {
+            $('#btn2').click(function() {
+                var img = $("img");
+                var src = img.attr("src");
+                console.log('이미지 경로 : ' + src);
+                var width = img.attr("width");
+                var height = img.attr("height");
+                console.log("너비 : "+width+", 높이 : "+height);
+            });
+            
+            $('#btn3').click(function() {
+                var img = $("img");
+                img.attr("width","500");
+                img.attr("height","600");
+            });
+            
+            $('#btn4').click(function() {
+                var img = $("img");
+                img.removeAttr("width");
+                img.removeAttr("height");
+            });
+            
+            $('#btn5').click(function() {
+                console.log($('#h1').html());
+            });
+            $('#btn6').click(function() {
+                console.log($('#h1').text());
+            });
+            $('#btn7').click(function() {
+                $('#ddd').html("<h1>추가</h1>");
+            });
+            $('#btn8').click(function() {
+                $('#ddd').text("<h1>추가</h1>");
+            });
+            
+            $('#btn11').click(function() {
+                //뒤로 추가(자식개념)
+                $("<span>추가구문</span>").appendTo("#p1");
+            });
+            $('#btn21').click(function() {
+                //뒤로 추가(자식개념)
+                $('#p1').append("<span>추가구문</span>");
+            });
+            $('#btn12').click(function() {
+                //앞으로 추가(자식개념)
+                $("<span>추가구문</span>").prependTo("#p2");
+            });
+            $('#btn22').click(function() {
+                //앞으로 추가(자식개념)
+                $('#p2').prepend("<span>추가구문</span>");
+            });
+            $('#btn13').click(function() {
+                //뒤로 추가(형제개념)
+                $("<span>추가구문</span>").insertAfter("#p3");
+            });
+            $('#btn23').click(function() {
+                //뒤로 추가(형제개념)
+                $('#p3').before("<span>추가구문</span>");
+            });
+            $('#btn14').click(function() {
+                //앞으로 추가(형제개념)
+                $("<span>추가구문</span>").insertBefore("#p4");
+            });
+            $('#btn24').click(function() {
+                //앞으로 추가(형제개념)
+                $('#p4').after("<span>추가구문</span>");
+            });
+            $('#btn31').click(function() {
+                $("#removeTest").children().eq(1).remove();
+            });
+            $('#btn32').click(function() {
+                $("#removeTest").empty();
+            });
+            $('#btn33').click(function() {
+                $("#copyTest>div").append($('#copyTest>h1'));
+            });
+            $('#btn34').click(function() {
+                $("#copyTest>div").append($('#copyTest>h1').clone());
             });
         });
     </script>
-</body>
-</html>
+</body></html>

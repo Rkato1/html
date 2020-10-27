@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+
+<body>
+
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <style>
+        div {
+            border: 2px solid black;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            float: left;
+        }
+
+    </style>
+
+    문제3<br>
+    다음 2개의 그림 중 선택한 후 복사 될 수 있도록 구현하여라 <br>
+    <fieldset style="width:300px; margin:30px">
+        <legend>2개의 그림 중 선택하시오.</legend>
+        <div id="img1" style="background-color:red;">
+
+        </div>
+        <div id="img2" style="background-color:blue;">
+
+        </div>
+    </fieldset>
+
+    <fieldset style="width:800px;  margin:30px">
+
+        <legend>복사되는 공간</legend>
+
+        <div id="div1">
+
+        </div>
+        <div id="div2">
+
+        </div>
+        <div id="div3">
+
+        </div>
+        <div id="div4">
+
+        </div>
+        <div id="div5">
+
+        </div>
+        <div id="div6">
+
+        </div>
+        <div id="div7">
+
+        </div>
+    </fieldset>
+
+
+
+    <button id="btn1"> 초기화 </button>
+
+    <script>
+        var color;
+        var div = $('div');
+        div.click(function() {
+            var idx = $('div').index(this);
+            if (idx > 1) {
+                $(this).css('background-color', color);
+            } else {
+                color = $(this).css('background-color');
+                console.log(color);
+            }
+        });
+        var btn = $('#btn1');
+        btn.click(function() {
+            color='transparent';
+            $('div').each(function(idx, item) {
+                if (idx > 1) {                    
+                    $(item).css('background-color', color);
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
