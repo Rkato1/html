@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<style>
+    #mid {
+        margin: 0 auto;
+        width: 200px;
+        height: auto;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    ul {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    ul ul {
+        padding-left: 10px;
+        display: none;
+    }
+
+    #mid>ul>li {
+        background: #DA4453;
+        color: white;
+    }
+
+    #mid>ul>li>ul {
+        background: #383838;
+    }
+</style>
+
+<body>
+    <div id="mid">
+        <ul>
+            <li>Home</li>
+            <li>JAVA</li>
+            <li>Oracle</li>
+            <li>FrontEnd
+                <ul>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>jQuery
+                        <ul>
+                            <li>객체탐색</li>
+                            <li>객체조작</li>
+                            <li>이벤트</li>
+                            <li>효과</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>Server</li>
+            <li>Framework
+                <ul>
+                    <li>Mybatis</li>
+                    <li>Spring</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var li = $('#mid>ul>li');
+    var li2 = $('#mid>ul>li>ul>li');
+    console.log(li2.html());
+    var visibleLi = -1;
+    var visibleLi2 = -1;
+
+    li.click(function() {
+        var idx = li.index(this);
+        if (li.eq(idx).children().html() != null) {
+            var temp = li.eq(idx).children();
+            visibleLi *= -1;
+            if (visibleLi > 0) {
+                temp.css({
+                    display: 'block'
+                });
+            } else {
+                temp.css({
+                    display: 'none'
+                });
+            }
+        }
+    });
+
+    li2.click(function() {
+        var idx = li2.index(this);
+        if (li2.eq(idx).children().html() != null) {
+            var temp = li2.eq(idx).children();
+            visibleLi2 *= -1;
+            if (visibleLi2 > 0) {
+                temp.css({
+                    display: 'block'
+                });
+                console.log('block');
+            } else {
+                temp.css({
+                    display: 'none'
+                });
+                console.log('none');
+            }
+        }
+    });
+</script></html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML 페이지</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        .menu {
+            width: 260px;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        .menu a {
+            font-size: 14px;
+            height: 40px;
+            line-height: 40px;
+            display: block;
+            text-decoration: none;
+            color: #FFF;
+            padding-left: 20px;
+        }
+
+        .menu ul {
+            position: relative;
+            list-style: none;
+            padding: 0;
+        }
+
+        .main-menu>li {
+            background: #ED5565;
+            border-bottom: 1px solid #DA4453;
+        }
+
+        .main-menu>li:hover {
+            background: #DA4453;
+        }
+        
+        .sub-menu>li>a {
+            background: #383838;
+            border-left: 10px solid #383838;
+        }
+
+        .sub-menu>li:hover>a {
+            border-left: 10px solid #DA4453;
+        }
+
+        .more {
+            font-size: 20px;
+            position: absolute;
+            right: 20px;
+            transition-duration: 0.5s;
+        }
+
+        .active {
+            transform: rotate(45deg);
+        }
+
+    </style>
+    <script>
+        $(function() {
+            $(".main-menu ul").hide();
+            $(".sub-menu").prev().append('<span class="more">+</span>');
+            $(".more").click(function(event) {
+                $(this).parent().next().slideToggle();                
+                if ($(this).attr("class") == "more") {
+                    $(this).addClass("active");
+                } else {
+                    $(this).removeClass("active");
+                }
+                event.stopPropagation();
+
+            });
+            $(".more").parent().click(function() {
+                $(this).children().last().click();
+            });
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="menu">
+        <ul class="main-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">JAVA</a></li>
+            <li><a href="#">Oracle</a></li>
+            <li>
+                <a href="#">FrontEnd</a>
+                <ul class="sub-menu">
+                    <li><a href="#">HTML5</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li>
+                        <a href="#">jQuery</a>
+                        <ul class="sub-menu">
+                            <li><a href="#">객체탐색</a></li>
+                            <li><a href="#">객체조작</a></li>
+                            <li><a href="#">이벤트</a></li>
+                            <li><a href="#">효과</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">Server</a></li>
+            <li>
+                <a href="#">Framework</a>
+                <ul class="sub-menu">
+                    <li><a href="#">Mybatis</a></li>
+                    <li><a href="#">Spring</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

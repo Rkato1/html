@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <style>
+        .wrap{
+            color : #0464bb;
+            width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color:#f8f8f8;
+            border: 1px solid #e0e0e0;
+        }
+        .top{
+            overflow: hidden;
+        }
+        .top>ul{
+            margin: 0 auto;
+            margin-top: 5px;
+            padding-left: 6px;
+        }
+        .top li{
+            padding-left: 5px;
+            border-top-right-radius: 30px;
+            border-bottom-right-radius: 30px;
+            margin-right: 5px;
+            list-style: none;
+            float:left;
+            width:23.5%;
+            height: 70px;
+            background-color:#ebebeb;
+        }
+        .top li:hover{
+            cursor: pointer;
+        }
+        .top li>h2{
+            margin: 0;
+        }
+        .top li>p{
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+        }
+        .mid{
+            margin: 3px;
+            padding: 3px;
+            height: 300px;            
+            border: 1px solid #e0e0e0;
+        }
+        .mid>div{
+            display: none;
+        }
+        .bottom{
+            height: 35px;
+            padding : 5px 10px 0 10px;
+        }
+        .bottom>button{            
+            display: block;
+            background-color: #5a5655;
+            color:#fff;            
+            width:100px;
+            height: 25px;
+            border-radius: 7px;
+            outline: 0;
+            border: 0;
+        }
+        .bottom>button:hover{
+            cursor: pointer;
+            background-color: #ea8511;
+        }
+        #btn1{
+            float : left;
+        }
+        #btn2{
+            float: right;
+        }
+    </style>
+    <script>
+        $(function(){
+            var navi = $(".top>ul>li");
+            var content = $(".mid>div");
+            var buttons = $(".bottom>button");
+            //현재 단계
+            var currentStep = 0;
+            
+            navi.click(function(){
+                var index = navi.index(this);
+                if(!(index>currentStep+1)){
+                    init(index);
+                    currentStep=index;
+                }
+            });
+            
+            buttons.click(function(){
+                var index = buttons.index(this);
+                if(index==0){
+                    currentStep--;
+                    init(currentStep);
+                }else if(index==1 && currentStep<3){
+                    currentStep++;
+                    init(currentStep);
+                }
+            });
+            
+            //초기화
+            function init(i){
+                clear();
+                showNavi(i);
+                showContent(i);
+                showButton(i);
+            }
+            
+            //단계보여주기
+            function showNavi(idx){
+                navi.eq(idx).css({backgroundColor:'#ea8511',color:'#fff'});
+                for(var i=0; i<idx; i++){
+                    navi.eq(i).css({backgroundColor:'#0454bb',color:'#fff'});
+                }
+            }
+            //본문보여주기
+            function showContent(idx){
+                content.eq(idx).show();
+            }
+            //버튼보여주기
+            function showButton(idx){
+                if(idx==0){
+                    buttons.eq(0).hide();
+                }else if(idx==3){
+                    buttons.eq(1).html("done");
+                }
+            }
+            function clear(){
+                navi.css({backgroundColor:'#ebebeb',color:'#0454bb'});
+                content.hide();
+                buttons.show();
+                buttons.eq(0).text("< Back");
+                buttons.eq(1).text("Next >");
+            }
+            showNavi(0);
+            showContent(0);
+            showButton(0);
+        });
+        
+    </script>    
+</head>
+<body>
+    <div class="wrap">
+        <div class="top">
+            <ul>
+                <li>
+                    <h2>Step 1</h2>
+                    <p>HTML5</p>
+                </li>
+                <li>
+                    <h2>Step 2</h2>
+                    <p>CSS</p>
+                </li>
+                <li>
+                    <h2>Step 3</h2>
+                    <p>JavaScript</p>
+                </li>
+                <li>
+                    <h2>Step 4</h2>
+                    <p>jQuery</p>
+                </li>
+            </ul>
+        </div>
+        <div class="mid">
+            <div>
+                <h2>HTML5</h2>	
+                <p>
+                    HTML5는 HTML의 완전한 5번째 버전으로 월드 와이드 웹 (World Wide Web)의 핵심 마크업 언어이다. 2004년 7월 Web Hypertext Application Technology Working Group(WHATWG)에서 웹 애플리케이션 1.0이라는 이름으로 세부 명세 작업을 시작하였다.<br>                
+                    HTML5는 HTML 4.01, XHTML 1.0, DOM 레벨 2 HTML에 대한 차기 표준 제안이다. 비디오, 오디오 등 다양한 부가기능과 최신 멀티미디어 콘텐츠를 액티브X 없이 브라우저에서 쉽게 볼 수 있게 하는 것을 목적으로 한다.<br>
+                    W3C는 2014년 10월 28일 HTML5 표준안을 확정했다고 발표했다.<br>               
+                    이후 2016년 11월 1일 HTML5의 마이너 업데이트 버전인 HTML5.1 표준안을 확정, 2017년 12월 14일 HTML5.2 표준안을 확정했다. HTML5.3 표준안은 현재 작업 초안 단계로 진행 중이다.
+                </p>              
+            </div>
+            <div>
+                <h2>CSS</h2>	
+                <p>
+                    HTML 등의 마크업 언어로 작성된 문서가 실제로 웹사이트에 표현되는 방법을 정해주는 언어.<br>
+                    CSS의 C가 Cascading의 약자인데, 이는 상위 요소의 스타일 속성을 자손 요소들에게 상속시켜주는 모습이 DOM 트리구조에서 마치 폭포수처럼 내려가는 모습을 닮았기 때문이다.
+                </p>               
+            </div>
+            <div>
+                <h2>JavaScript</h2>	
+                <p>
+                    프로토타입기반의 객체지향 프로그래밍 언어로, 스크립트 언어에 해당된다. 특수한 목적이 아닌 이상 모든 웹 브라우저에 인터프리터가 내장되어 있다. 오늘날 HTML, CSS와 함께 웹을 구성하는 요소 중 하나다. HTML이 웹 페이지의 기본 구조를 담당하고, CSS가 디자인을 담당한다면 JavaScript는 클라이언트 단에서 웹 페이지가 동작하는 것을 담당한다. 웹 페이지를 자동차에 비유하자면, HTML은 자동차의 뼈대, CSS는 자동차의 외관, JavaScript는 자동차의 동력이라고 볼 수 있다.<br>
+                    썬 마이크로시스템즈(현재 오라클)에서 개발한 Java와는 별 관계가 없는 언어이다. 이름이 비슷하다고 같은 언어가 아니다. 사람들이 흔히 헷갈리는 부분 중 하나. 실질적인 구동 방식도 JVM을 이용해서 돌리는 Java와, 브라우저 내에 스크립트 엔진(인터프리터)이 존재하는 JavaScript는 완전히 다르다. 
+                </p>            
+            </div>
+            <div>
+                <h2>jQuery</h2>	
+                <p>
+                    jQuery는 HTML 속 클라이언트 사이드 스크립트 언어를 단순화하도록 설계된 브라우저 호환성이 있는 JavaScript 라이브러리이다. 존 레식에 의해 2006년 뉴욕 시 바캠프(Barcamp NYC)에서 공식적으로 소개되었다. 현재 가장 인기 있는 JavaScript 라이브러리이며 표준에 가까운 점유율을 자랑한다.
+                </p>
+            </div>
+        </div>
+        <div class="bottom">
+            <button id="btn1">&lt; Back</button>
+            <button id="btn2">Next &gt;</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -263,7 +263,6 @@
 
                 function next() {
                     var need = document.getElementsByName("need")[0];
-                    //console.log(need);
                     if (need.checked) {
                         console.log(page1);
                         page1.style.display = "none";
@@ -299,7 +298,6 @@
                         btemp = false;
                     }
                     for (var i = 0; i < ids.length; i++) {
-                        //console.log(ids[i]);
                         if (ids[i] == id.value) {
                             var intervalId = window.setInterval(function() {
                                 spanid.innerHTML = "이미 사용중인 아이디입니다.";
@@ -354,7 +352,6 @@
                 select.onchange = function() {
                     var email2 = document.getElementById("email2");
                     email2.value = select.value;
-                    //alert(select.value);
                 }
 
                 function next3() {
