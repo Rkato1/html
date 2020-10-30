@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>정규표현식</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<body>
+    <input type="text" id="text">
+    <button id="btn">확인</button>
+    <script>
+        $(function(){
+            $('#btn').click(function(){
+                var inputVal = $('#text').val();
+                var regExp;
+                //a가 포함되어있으면
+                //regExp = /a/;
+                //a로 시작되면
+                //regExp = /^a/;
+                //a or b가 포함되어있으면
+                //regExp = /[ab]/;
+                //a or b로 시작하면
+                //regExp = /^[ab]/;
+                //a로 끝난다면
+                //regExp = /a$/;
+                //a or b로 끝난다면
+                //regExp = /[ab]$/;
+                //a로 시작해서 b로 끝난다면(중간 아무거나 가능)
+                //regExp = /^a.+b$/;
+                //숫자만 입력하고 싶은경우
+                //regExp = /^\d+$/;
+                //영어 대소문자만 입력해야하는경우
+                //regExp = /^[a-zA-Z]+$/;
+                //플래그를 사용하는방법 위와 같은 결과                
+                //regExp = /^[a-z]+$/i;
+                //영어 대소문자,숫자만 입력해야 하는 경우
+                //regExp = /^[a-z0-9]+$/i;
+                //한글만 입력해야하는경우
+                //regExp = /^[ㄱ-ㅎㅏ-ㅣ가-힣]+$/;
+                //영어 대/소문자 3~5글자
+                //regExp = /^[a-z]{3,5}$/i;
+                //한글3글자
+                //regExp = /^[가-힣]{3}$/;
+                //영어 대/소문자,숫자 8~12글자, 시작글자는 소문자만
+                //regExp = /^[a-z][a-zA-Z0-9]{7,11}$/;
+                //regExp = /![a-zA-Z\s]/;
+                regExp = /^[^a-zA-Z]\S$/;
+                if(regExp.test(inputVal)){
+                    alert("성공");
+                }else{
+                    alert("실패");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

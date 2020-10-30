@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<body>
+    <style>
+        .wrapper {
+            width: 800px;
+            height: 600px;
+            background-color: deepskyblue;
+            margin: 0 auto;
+            border-radius: 50px;
+        }
+
+        .wrapper>h1 {
+            padding-top: 30px;
+            padding-left: 50px;
+        }
+
+        .wrapper table {
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        #result {
+            color: #faaca8;
+            font-size: 1.3em;
+            font-weight: 900;
+            text-align: center;
+        }
+
+        .wrapper table tr>td {
+            border-top: 2px solid #FFF;
+        }
+
+        .wrapper table tr:first-child>td {
+            border-top: 2px solid #faaca8;
+        }
+
+        .wrapper table tr>td:first-child {
+            width: 180px;
+        }
+
+        .wrapper table tr>td:last-child {
+            width: 550px;
+        }
+
+        .wrapper table tr>td:first-child {
+            padding: 15px;
+            font-size: 17px;
+            line-height: 20px;
+            font-weight: 500;
+            font-weight: 900;
+        }
+
+        .longInput {
+            margin-top: 3px;
+            width: 300px;
+            height: 38px;
+        }
+
+        .shortInput {
+            margin-top: 3px;
+            width: 90px;
+            height: 38px;
+        }
+
+        .wrapper form input,
+        .wrapper form select {
+            font-size: 20px;
+        }
+
+        .inputBox {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+        }
+
+        .botton {
+            width: 150px;
+            height: 45px;
+            border: none;
+            display: inline-block;
+            background-color: #2EC4B6;
+            color: white;
+        }
+
+        .btnBox {
+            margin: 30px;
+            padding-bottom: 30px;
+            text-align: center;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input+label {
+            margin-top: 3px;
+            text-align: center;
+            display: inline-block;
+            background-color: #4b4b4b;
+            width: 150px;
+            color: white;
+            line-height: 35px;
+            height: 35px;
+        }
+
+        input:checked+label {
+            background-color: #2EC4B6;
+        }
+
+        .comment {
+            color: #faaca8;
+            font-size: 0.8em;
+            font-weight: 900;
+        }
+
+        .left {
+
+            float: left;
+            width: 50%;
+            height: 60%;
+        }
+
+        .right {
+
+            float: left;
+            width: 50%;
+            height: 60%;
+        }
+
+        .footer {
+            clear: both;
+            height: 20%;
+        }
+
+        input {
+            outline: none;
+            width: 80%;
+        }
+
+        label {
+            position: relative;
+        }
+
+        form {
+            margin-left: 10%;
+            width: 80%;
+            height: 70%;
+            background: white;
+        }
+
+    </style>
+    <div class="wrapper">
+        <h1>회원가입</h1>
+        <form action="enroll.html" method="post">
+            <div class="left">
+                <div class="left1">
+                    <label>아이디*<span class="comment"></span></label><br>
+                    <input class="input" type="text" name="id">
+                </div>
+                <div class="left2">
+                    <label>비밀번호*<span class="comment"></span></label><br>
+                    <input class="input" type="password" name="pw">
+                </div>
+                <div class="left3">
+                    <label>EMAIL*<span class="comment"></span></label><br>
+                    <input class="input" type="text" name="email">
+                </div>
+            </div>
+            <div class="right">
+                <div class="right1">
+                    <label>이름*<span class="comment"></span></label><br>
+                    <input class="input" type="text" name="name">
+                </div>
+                <div class="right2">
+                    <label>비밀번호 확인*<span class="comment"></span></label><br>
+                    <input class="input" type="password" name="pw_re">
+                </div>
+                <div class="right3">
+                    <label>PHONE*<span class="comment"></span></label><br>
+                    <input class="input" type="text" name="phone">
+                </div>
+            </div>
+            <div class="footer">
+                <label>주소<span class="comment"></span></label><br>
+                <input class="input" type="text" name="addr2">
+            </div>
+
+
+            <div class="btnBox">
+                <input class="botton" type="submit" value="회원가입">
+                <input class="botton" type="reset" value="초기화">
+            </div>
+        </form>
+    </div>
+    <script>
+        var inputs = $("input");
+        var comments = $(".comment");
+        console.log(inputs);
+        console.log(comments);
+        $(function() {
+            var idRef = /^[a-z][a-z0-9]{3,11}$/;
+            if (!idRef.test(inputs.eq(0).val())) {
+                comments.eq(0).html("영어소문자+숫자 4~12자리/영어로 시작");
+            }
+            var pwRef = /^[a-zA-Z0-9]{6,18}$/;
+            if (!pwRef.test(inputs.eq(1).val())) {
+                comments.eq(1).html("영어대소문자+숫자 6~18자리");
+            }
+            var emailRef = /^[a-z0-9]{4,12}@[a-z0-9.-].[a-z]{2,6}$/;
+            if (!emailRef.test(inputs.eq(2).val())) {
+                comments.eq(2).html("Email형식에 맞지 않습니다.");
+            }
+            var nameRef = /^[가-힣]{2,4}$/;
+            if (!nameRef.test(inputs.eq(3).val())) {
+                comments.eq(3).html("한글 2~4글자");
+            }
+            if (inputs.eq(1).val() != inputs.eq(4).val()) {
+                comments.eq(4).html("비밀번호가 일치하지 않습니다.");
+            }
+            var phoneRef = /^\d{2,3}-\d{3,4}-\d{4}$/;
+            if (!nameRef.test(inputs.eq(5).val())) {
+                comments.eq(5).html("전화번호 형식(000-0000-0000)");
+            }
+        });
+        $(".left1").focusin(function() {
+            console.log(1);
+        });
+        $(".left1").focusout(function() {
+            console.log(2);
+        });
+
+    </script>
+</body>
+
+</html>
