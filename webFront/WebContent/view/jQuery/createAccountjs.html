@@ -141,19 +141,40 @@
         }
 
         input {
-            outline: none;
+            border: none;
+            border-bottom: 1px solid lightgray;
             width: 80%;
+            position: relative;
+            background-color: transparent;
         }
 
         label {
-            position: relative;
+            position: absolute;
+            font-size: 2em;
         }
-
         form {
             margin-left: 10%;
             width: 80%;
             height: 70%;
             background: white;
+        }
+        .left1{
+            position: relative;
+        }
+        .left2{
+            position: relative;
+        }
+        .left3{
+            position: relative;
+        }
+        .right1{
+            position: relative;
+        }
+        .right2{
+            position: relative;
+        }
+        .right3{
+            position: relative;
         }
 
     </style>
@@ -189,8 +210,9 @@
                 </div>
             </div>
             <div class="footer">
-                <label>주소<span class="comment"></span></label><br>
+                <label>주소</label><br>
                 <input class="input" type="text" name="addr2">
+                <!--required 추가해주면 안넘어가게할수있음-->
             </div>
 
 
@@ -205,38 +227,133 @@
         var comments = $(".comment");
         console.log(inputs);
         console.log(comments);
+        var submit = $("input[type=submit]");
+        console.log(submit);
+        var label = $("label");
+        console.log(label);
         $(function() {
+            
+        });
+        $(".left1").focusin(function() {
+            label.eq(0).css({fontSize:'1em'});
+        });
+        $(".left1").focusout(function() {
             var idRef = /^[a-z][a-z0-9]{3,11}$/;
             if (!idRef.test(inputs.eq(0).val())) {
                 comments.eq(0).html("영어소문자+숫자 4~12자리/영어로 시작");
+            }else{
+                comments.eq(0).html("");
             }
+            if(inputs.eq(0).val()==""){
+                label.eq(0).css({fontSize:'2em'});
+            }
+        });
+        
+        $(".left2").focusin(function() {
+            label.eq(1).css({fontSize:'1em'});
+        });
+        $(".left2").focusout(function() {
             var pwRef = /^[a-zA-Z0-9]{6,18}$/;
             if (!pwRef.test(inputs.eq(1).val())) {
                 comments.eq(1).html("영어대소문자+숫자 6~18자리");
+            }else{
+                comments.eq(1).html("");
             }
-            var emailRef = /^[a-z0-9]{4,12}@[a-z0-9.-].[a-z]{2,6}$/;
+            if(inputs.eq(1).val()==""){
+                label.eq(1).css({fontSize:'2em'});
+            }
+        });
+        
+        $(".left3").focusin(function() {
+            label.eq(2).css({fontSize:'1em'});
+        });
+        $(".left3").focusout(function() {
+            var emailRef = /^[a-z0-9]{4,12}@[a-z0-9.-]+.[a-z]{2,6}$/;
             if (!emailRef.test(inputs.eq(2).val())) {
                 comments.eq(2).html("Email형식에 맞지 않습니다.");
+            }else{
+                comments.eq(2).html("");
             }
-            var nameRef = /^[가-힣]{2,4}$/;
-            if (!nameRef.test(inputs.eq(3).val())) {
-                comments.eq(3).html("한글 2~4글자");
+            if(inputs.eq(2).val()==""){
+                label.eq(2).css({fontSize:'2em'});
             }
-            if (inputs.eq(1).val() != inputs.eq(4).val()) {
-                comments.eq(4).html("비밀번호가 일치하지 않습니다.");
-            }
-            var phoneRef = /^\d{2,3}-\d{3,4}-\d{4}$/;
-            if (!nameRef.test(inputs.eq(5).val())) {
-                comments.eq(5).html("전화번호 형식(000-0000-0000)");
-            }
-        });
-        $(".left1").focusin(function() {
-            console.log(1);
-        });
-        $(".left1").focusout(function() {
-            console.log(2);
         });
 
+        $(".right1").focusin(function() {
+            label.eq(3).css({fontSize:'1em'});
+        });
+        $(".right1").focusout(function() {
+             var nameRef = /^[가-힣]{2,4}$/;
+            if (!nameRef.test(inputs.eq(3).val())) {
+                comments.eq(3).html("한글 2~4글자");
+            }else{
+                comments.eq(3).html("");
+            }
+            if(inputs.eq(3).val()==""){
+                label.eq(3).css({fontSize:'2em'});
+            }
+        });
+        
+        $(".right2").focusin(function() {
+            label.eq(4).css({fontSize:'1em'});
+        });
+        $(".right2").focusout(function() {
+            if (inputs.eq(1).val() != inputs.eq(4).val()) {
+                comments.eq(4).html("비밀번호가 일치하지 않습니다.");
+            }else{
+                comments.eq(4).html("");
+            }
+            if(inputs.eq(4).val()==""){
+                label.eq(4).css({fontSize:'2em'});
+            }
+        });
+        
+        $(".right3").focusin(function() {
+            label.eq(5).css({fontSize:'1em'});
+        });
+        $(".right3").focusout(function() {
+            var phoneRef = /^\d{2,3}-\d{3,4}-\d{4}$/;
+            if (!phoneRef.test(inputs.eq(5).val())) {
+                comments.eq(5).html("전화번호 형식(000-0000-0000)");
+            }else{
+                comments.eq(5).html("");
+            }
+            if(inputs.eq(5).val()==""){
+                label.eq(5).css({fontSize:'2em'});
+            }
+        });
+        
+        $(".footer").focusin(function() {
+            label.eq(6).css({fontSize:'1em'});
+        });
+        $(".footer").focusout(function() {            
+            if(inputs.eq(6).val()==""){
+                label.eq(6).css({fontSize:'2em'});
+            }
+        });
+        $('input[type=submit]').click(function(event) {            
+            var count=0;
+            for(var i=0; i<comments.length; i++){
+                if(comments.eq(i).html()!=""){
+                    count++;
+                }
+            }
+            if(count!=0){
+                console.log(count);
+                event.preventDefault();
+            }else{
+                
+            }
+        });
+        
+        $('input[type=reset]').click(function(event) {
+            for(var i=0; i<label.length; i++){
+                label.eq(i).css({fontSize:'2em'});
+            }
+            for(var i=0; i<comments.length; i++){
+                comments.eq(i).html("");
+            }
+        });
     </script>
 </body>
 

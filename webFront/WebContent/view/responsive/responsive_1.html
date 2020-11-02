@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+</head>
+<style>
+    .container{
+        width: 80%;        
+        background-color: lightgray;
+        padding: 50px;
+        overflow: hidden;
+    }
+    .div1{
+        width: 100px;
+        height: 100px;
+        box-sizing: border-box;
+        float: left;
+        background-color: blueviolet;
+        border: 1px solid black;
+    }
+    .div2{
+        width: 15%;
+        max-width: 120px;
+        height: 100px;
+        box-sizing: border-box;
+        float: left;
+        background-color: blueviolet;
+        border: 1px solid black;
+    }
+    .div3{
+        width: 15%;
+        min-width: 80px;
+        height: 100px;
+        box-sizing: border-box;
+        float: left;
+        background-color: blueviolet;
+        border: 1px solid black;
+    }
+    .wrap{
+        width: 800px;
+        background-color:  lightblue;
+        padding: 50px;
+        height: 300px;
+    }
+    .div5{
+        /*현재 브라우저 가로너비를 1/100단위로 사용*/
+        width: 100vw;
+        background-color: blue;
+        height: 20vh;
+        position: relative;
+        left: -50px;
+    }
+    .navi{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        list-style-type: none;        
+        min-width: 900px;
+    }
+    .navi>li{
+        float: left;
+        width: calc(100%/7);
+    }
+    .navi>li>a{
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        height: 50px;
+        font-size: 15px;
+        line-height: 48px;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid black;
+        color: black;
+    }
+</style>
+
+<body>
+    <h1>반응형 웹 단위</h1>
+    <hr>
+    <div class="container">
+        <div class="div1"></div>
+        <div class="div1"></div>
+        <div class="div1"></div>
+        <div class="div1"></div>
+    </div>
+    <div class="container">
+        <div class="div2">test111111111test1111111</div>
+        <div class="div2"></div>
+        <div class="div2"></div>
+        <div class="div2"></div>
+    </div>
+    <div class="container">
+        <div class="div3"></div>
+        <div class="div3"></div>
+        <div class="div3"></div>
+        <div class="div3"></div>
+    </div>
+    <div class="wrap">
+        <div class="div5"></div>
+    </div>
+    
+    <ul class="navi">
+        <li><a href="#">JAVA</a></li>
+        <li><a href="#">ORACLE</a></li>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JAVASCRIPT</a></li>
+        <li><a href="#">jQuery</a></li>
+        <li><a href="#">Responsive Web</a></li>
+    </ul>
+</body>
+
+</html>
