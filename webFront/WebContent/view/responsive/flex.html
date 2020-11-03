@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+</head>
+
+<body>
+    <p>1.container,item</p>
+    <p>ul,li관계</p>
+    <p>2.메인축,반대축</p>
+    <p>내가 지정하는 방향, 그것의 반대방향</p>
+    <hr>
+    <style>
+        .container{
+            background-color: bisque;
+            height: 70vh;
+            display: flex;
+            /*기본값*/
+            flex-direction: row;
+            /*
+            flex-direction: row-reverse;
+            flex-direction: column;
+            flex-direction: column-reverse;
+            */
+            /*기본값*/            
+            /*flex-wrap: nowrap;*/
+            /*
+            flex-wrap: wrap;
+            */
+            /*메인축정렬*/
+            /*justify-content: center;*/
+            /*반대축정렬*/
+            /*align-items: center;*/
+            justify-content: center;
+            align-items: center;
+            
+            /*
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: space-around;
+            justify-content: space-between;
+            */
+            /*가장 큰거 중앙을 기점으로 중앙정렬*/
+            /*align-items: baseline;*/
+            /*위는 한줄일때 밑은 줄이 여러개일때*/
+            /*align-content: center;*/
+        }
+        .item{
+            width: 50px;
+            height: 50px;
+        }
+        .item1{
+            background-color: cornflowerblue;
+            /*padding:20px;*/
+            /*넓이에 꽉차게 들어감(비율)*/
+            /*flex-grow: 2;*/
+            /*위와 반대의 개념(작아짐,비율)*/
+            /*flex-shrink: 2;*/
+        }
+        .item2{
+            background-color: crimson;
+            /*따로 정렬지정가능(반대축만)*/
+            align-self: flex-start;
+        }
+        .item3{
+            background-color: darkcyan;
+        }
+        .item4{
+            background-color: darkblue;
+        }
+        .item5{
+            background-color: firebrick;
+        }
+        .item6{
+            background-color: darkorange;
+        }
+        .item7{
+            background-color: dimgray;
+        }
+    </style>
+    <div class="container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+    </div>
+</body>
+
+</html>

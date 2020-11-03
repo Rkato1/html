@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>responsiveweb_exam.html</title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .jumbotron {
+        margin: 0;
+    }
+
+    .menu {
+        background-color: #848484;
+    }
+
+    .menu>div>a {
+        display: block;
+        text-decoration: none;
+        color: white;
+    }
+
+    .menu>div>a:hover {
+        background-color: #333;
+    }
+
+    #goods {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .content img{
+        width: 100%;
+    }
+    .content>div:last-child{
+        width: 95%;
+        height: 100%;
+    }
+</style>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Responsive Web</h1>
+    </div>
+    <div class="row menu">
+        <div class="col-md-4 col-lg-1 text-center"><a href="#">Home</a></div>
+        <div class="col-md-4 col-lg-1 text-center"><a href="#">Service</a></div>
+        <div class="col-md-4 col-lg-1 text-center"><a href="#">About</a></div>
+    </div>
+    <div class="container" style="padding: 0">
+        <div class="col-lg-8"><img src="responsiveImg/web.png" id="goods"></div>
+        <div class="col-lg-4">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th style="font-size: 1.5em" colspan="2">홈페이지 제작</th>
+                    </tr>
+                    <tr>
+                        <th>개발사</th>
+                        <td>Lees's Corporation</td>
+                    </tr>
+                    <tr>
+                        <th>개발 기간</th>
+                        <td>기본 개발 14일(옵션에 따라 변동)</td>
+                    </tr>
+                    <tr>
+                        <th>금액</th>
+                        <td>9,000,000 ~ </td>
+                    </tr>
+                    <tr>
+                        <th rowspan="4">옵션선택</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option">PC 페이지(+1,000,000)<br>
+                            <input type="checkbox" name="option">모바일 페이지(+1,000,000)<br>
+                            <input type="checkbox" name="option">반응형 웹(+3,000,000)<br>
+                            <input type="checkbox" name="option">Secure Coding(+6,000,000)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center">
+                            <button type="button" class="btn btn-primary btn-lg" style="width: 100%">결제하기</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <hr>
+        <div>
+            <button type="button" class="btn btn-info btn-lg" style="width: 100%;" data-toggle="collapse" data-target="#detail_page">상세정보</button>
+        </div>
+        <div id="#detail_page" class="collapse">
+            <div class="row content">
+                <div class="col-md-6">
+                    <img src="responsiveImg/PC_Page.png">
+                </div>
+                <div class="col-md-6">
+                    <h2>PC 페이지</h2>
+                    <p>ㅇ PC 화면 크기 최적화</p>
+                    <p>ㅇ 다양한 브라우저 지원</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="py-5 bg-dark">
+        <p class="m-0 text-center text-white">Copyright &copy; Lee 2020</p>
+    </footer>
+</body>
+
+</html>
