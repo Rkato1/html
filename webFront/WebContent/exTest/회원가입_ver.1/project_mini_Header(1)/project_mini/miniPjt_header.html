@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MINIpjt</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+    <style>
+        * {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+
+        .header {
+            /*            background-color: lightgrey;*/
+            width: 100vw;
+
+        }
+
+        .menu a {
+            text-decoration: none;
+        }
+
+        .menu-top {
+            margin-right: 30px;
+        }
+
+
+        .menu-top>ul>li>a {
+            font-size: 10pt;
+        }
+
+        .menu-top>ul>li>a:hover {
+            font-size: 11pt;
+            ;
+            font-weight: bold;
+        }
+
+        .menu-main>ul>li>a {
+            font-size: 13pt;
+            color: gray;
+        }
+
+        .menu-main>ul>li>a:hover {
+            font-size: 14pt;
+            font-weight: bold;
+            color: saddlebrown;
+        }
+
+        .nav>li>a {
+            font-size: 13pt;
+            color: gray;
+        }
+
+        .header-top {
+            height: 100px;
+        }
+
+        .sub {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .sub a {
+            font-size: 11pt;
+            height: 30px;
+            padding: 10px;
+            color: gray;
+        }
+
+        .sub>li>a:hover {
+            font-size: 12pt;
+            font-weight: bold;
+            color: saddlebrown;
+        }
+
+        .body {
+            height: 800px;
+
+        }
+
+        footer {
+            margin-top: 10px;
+            width: 100vw;
+            border-top: 3px solid saddlebrown;
+        }
+
+        .footer {
+            margin: 0 auto;
+            width: 600px;
+            color: gray;
+        }
+
+        pre {
+            font-size: 10pt;
+            color: gray;
+            text-align: center;
+        }
+
+        .copy {
+            font-size: 11pt;
+            color: darkgray;
+        }
+
+        .icon {
+            font-size: 25pt;
+            margin-left: 30px;
+
+        }
+
+
+        @media(max-width:760px) {
+            .header {
+                background-color: transparent;
+                position: absolute;
+            }
+
+            .menu-top {}
+
+            .menu-main>ul>li>a {
+                width: 120px;
+                text-align: left;
+                background-color: gainsboro;
+                top: 0;
+                left: 0;
+                position: relative;
+            }
+
+            .sub {
+                width: 120px;
+                text-indent: 20px;
+                text-align: left;
+            }
+
+        }
+    </style>
+
+    <script>
+        $(function() {
+            $(".icon").hide();
+            $(".sub").hide();
+
+            $(".list").click(function() {
+//                $(this).children().first().css('color', 'saddlebrown').css('font-size', '14pt').css('font-weight', 'bold');
+                $(this).find(".sub").slideToggle();
+                $(this).find(".sub").css('border-top', '2px solid gray');
+            });
+            $(".")
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <div class="header  fixed-top">
+        <i class="icon fas fa-bars"></i>
+        <div class="header-top">
+            <div class="logo">
+                <div class="menu-top">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">join</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">My page</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="menu-main ">
+            <ul class="nav justify-content-center">
+                <li class="list nav-item col-md-2 col-lg-1 text-center">
+                    <a class="nav-link " href="#">Brand</a>
+                    <ul class="sub">
+                        <li><a href="#">브랜드소개</a></li>
+                        <li><a href="#">브랜드소식</a></li>
+                    </ul>
+                </li>
+                <li class="list nav-item col-md-2 col-lg-1 text-center">
+                    <a class="nav-link " href="#">Menu</a>
+                    <ul class="sub">
+                        <li><a href="#">신메뉴</a></li>
+                        <li><a href="menuInfo.html">커피</a></li>
+                        <li><a href="#">음료</a></li>
+                        <li><a href="#">디저트</a></li>
+                        <li><a href="#">MD상품</a></li>
+                    </ul>
+                </li>
+                <li class="list nav-item col-md-2 col-lg-1 text-center">
+                    <a class="nav-link " href="#">Store</a>
+                </li>
+                <li class="list nav-item col-md-2 col-lg-1 text-center">
+                    <a class="nav-link " href="#">Event</a>
+                </li>
+                <li class="list nav-item col-md-2 col-lg-1 text-center">
+                    <a class="nav-link" href="#">Board</a>
+                    <ul class="sub">
+                        <li><a href="#">QnA</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="body"></div>
+
+
+
+    <footer class="py-5 ">
+        <div class="footer">
+            <pre>
+            (주)커피커피 | 사업자등록번호 000-858-46985 | 대표 아아아
+            주소 서울 영등포구 디지털로5길 모레빌딩 20층 | 팩스 02-555-6666
+            대표전화 02-888-6644 | 고객센터 1544-4544  
+        </pre>
+            <p class="copy m-0 text-center">Copyright &copy; by CofeeCofee. </p>
+
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+</body></html>

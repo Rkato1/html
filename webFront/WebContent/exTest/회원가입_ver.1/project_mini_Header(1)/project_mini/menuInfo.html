@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+        .content {
+            width: 100%;
+
+        }
+
+        .banner {
+            width: 100%;
+            overflow: hidden;
+            height: 400px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url(menu/sv_1.jpg);
+        }
+
+        .banner>h1 {
+            color: white;
+        }
+
+        .menu-corrector {
+            width: 100%;
+            height: 50px;
+            background-color: floralwhite;
+        }
+
+        .menu-corrector>div {
+            margin: 0 auto;
+            box-sizing: border-box;
+            width: 55%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .menu-corrector label {
+            text-align: center;
+            line-height: 49px;
+            float: left;
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 0 auto;
+            width: calc(100%/2);
+            height: 100%;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .menu-corrector label:hover>span {
+            color: white;
+            background-color: crimson;
+        }
+
+        .menu-corrector span {
+            transition-duration: 0.2s;
+            width: 100%;
+            height: 100%;
+            display: block;
+            color: #555;
+            font-weight: bold;
+        }
+
+        [type=radio] {
+            display: none;
+        }
+
+        [type=radio]:checked+span {
+            background-color: crimson;
+            color: white;
+        }
+
+        .title {
+            margin: 0 auto;
+            width: 95%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 3px solid #555;
+        }
+
+        .title>p {
+            font-size: 25px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .selector {
+            margin: 0 auto;
+            width: 95%;
+            height: 70px;
+            box-sizing: border-box;
+            padding-left: 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+
+        .selector>label {
+            margin: 10px;
+            display: inline-block;
+            width: 150px;
+            color: #555;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .menu-wrap {
+            margin: 0 auto;
+            width: 95%;
+            box-sizing: border-box;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        .selector>label>input+span {
+            box-sizing: border-box;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .box {
+            box-sizing: border-box;
+            padding: 10px;
+            width: calc(100%/4);
+            text-align: center;
+            float: left;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .image-box {
+            width: 100%;
+            height: 100;
+            margin: 0 auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-box>img {
+            width: 100%;
+            transition-duration: 0.2s;
+        }
+
+        .box>p {
+            font-size: 16px;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .menu {
+            width: 90%;
+            min-width: 800px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        $(function() {
+            $(".menu-wrap").eq(1).hide();
+            $(".menu").hide();
+            menushow();
+            $(".menu-corrector>div>label").eq(0).prop("checked","true");
+
+            $(".box").click(function() {
+                location.href = "nopage.html";
+            });
+            
+            $(".image-box").hover(function() {
+                $(this).children().css("transform", 'scale(1.1)');
+            }, function() {
+                $(this).children().css("transform", 'scale(1)');
+            });
+            var id;
+            $(".menu-corrector>div>label").click(function() {
+                idx = $(".menu-corrector>div>label").index(this);
+                $(".menu-wrap").hide();
+                $(".menu-wrap").eq(idx).show();
+            });
+            
+            $(".selector>label>input").change(function(){
+                menushow();
+            });
+                
+            function menushow() {
+                $(".menu").hide();
+                for (var i = 0; i < $(".menu").length; i++) {
+                    if ($(".selector input").eq(i).is(":checked")) {
+                        $(".menu").eq(i).show();
+                    }
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div class="banner">
+            <h1>MENU</h1>
+        </div>
+        <div class="menu-corrector">
+            <div>
+                <label><input type="radio" name="menu" value="drink" checked><span>음료</span></label>
+                <label><input type="radio" name="menu" value="food"><span>푸드</span></label>
+            </div>
+        </div>
+        <div id="drink" class="menu-wrap">
+            <div class="title">
+                <p>음료</p>
+            </div>
+            <div class="selector">
+                <label><input type="checkbox" name="drink" checked> COFFEE</label>
+                <label><input type="checkbox" name="drink" checked > FRAPPUCHINO</label>
+            </div>
+            <div class="menu">
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/espresso.jpg" alt="espresso"></div>
+                    <p>에스프레소</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/hot_americano.jpg" alt="americano"></div>
+                    <p>아메리카노</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/ice_americano.jpg" alt="ice_imericano"></div>
+                    <p>아이스 아메리카노</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/hot_latte.jpg"></div>
+                    <p>카페라떼</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/ice_latte.jpg"></div>
+                    <p>아이스 카페라떼</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/hot_cafemocca.jpg"></div>
+                    <p>카페모카</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/ice_cafemocca.jpg"></div>
+                    <p>아이스 카페모카</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/hot_caramel.jpg"></div>
+                    <p>카라멜마끼아또</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/ice_caramel.jpg"></div>
+                    <p>아이스 카라멜마끼아또</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/hot_apo.jpg"></div>
+                    <p>아포가또</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/ice_apo.jpg"></div>
+                    <p>아이스 아포가또</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/javachip.jpg"></div>
+                    <p>자바칩 프라푸치노</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/malcha.jpg"></div>
+                    <p>제주 말차 프라푸치노</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/choco.jpg"></div>
+                    <p>초콜릿 크림 프라푸치노</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/vanilla.jpg"></div>
+                    <p>바닐라 프라푸치노</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/coffee/berry.jpg"></div>
+                    <p>스트로베리 프라푸치노</p>
+                </div>
+            </div>
+        </div>
+        <div id="food" class="menu-wrap">
+            <div class="title">
+                <p>푸드</p>
+            </div>
+            <div class="selector">
+                <label><input type="checkbox" name="menu" checked> BREAD</label>
+                <label><input type="checkbox" name="menu" checked> CAKE</label>
+            </div>
+            <div class="menu">
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/ba2.jpg"></div>
+                    <p>치즈 베이글</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/ba.jpg"></div>
+                    <p>블루베리 베이글</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/scone2.jpg"></div>
+                    <p>초콜릿 스콘</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/scone.jpg"></div>
+                    <p>클래식 스콘</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/pie.jpg"></div>
+                    <p>리프 파이</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/denish.jpg"></div>
+                    <p>몽블랑 데니쉬</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/gana.jpg"></div>
+                    <p>가나슈 케이크</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/redvelvet.jpg"></div>
+                    <p>레드벨벳 케이크</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/tira.jpg"></div>
+                    <p>티라미수 케이크</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/cheese.jpg"></div>
+                    <p>치즈 케이크</p>
+                </div>
+                <div class="box">
+                    <div class="image-box"><img src="menu/food/castera.jpg"></div>
+                    <p>카스텔라</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body></html>

@@ -1,0 +1,129 @@
+@charset "UTF-8"
+* {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+
+        .header {
+            /*            background-color: lightgrey;*/
+            width: 100vw;
+
+        }
+
+        .menu a {
+            text-decoration: none;
+        }
+
+        .menu-top {
+            margin-right: 30px;
+        }
+
+
+        .menu-top>ul>li>a {
+            font-size: 10pt;
+        }
+
+        .menu-top>ul>li>a:hover {
+            font-size: 11pt;
+            ;
+            font-weight: bold;
+        }
+
+        .menu-main>ul>li>a {
+            font-size: 13pt;
+            color: gray;
+        }
+
+        .menu-main>ul>li>a:hover {
+            font-size: 14pt;
+            font-weight: bold;
+            color: saddlebrown;
+        }
+
+        .nav>li>a {
+            font-size: 13pt;
+            color: gray;
+        }
+
+        .header-top {
+            height: 100px;
+        }
+
+        .sub {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .sub a {
+            font-size: 11pt;
+            height: 30px;
+            padding: 10px;
+            color: gray;
+        }
+
+        .sub>li>a:hover {
+            font-size: 12pt;
+            font-weight: bold;
+            color: saddlebrown;
+        }
+
+        .body {
+            height: 800px;
+
+        }
+
+        footer {
+            margin-top: 10px;
+            width: 100vw;
+            border-top: 3px solid saddlebrown;
+        }
+
+        .footer {
+            margin: 0 auto;
+            width: 600px;
+            color: gray;
+        }
+
+        pre {
+            font-size: 10pt;
+            color: gray;
+            text-align: center;
+        }
+
+        .copy {
+            font-size: 11pt;
+            color: darkgray;
+        }
+
+        .icon {
+            font-size: 25pt;
+            margin-left: 30px;
+
+        }
+
+
+        @media(max-width:760px) {
+            .header {
+                background-color: transparent;
+                position: absolute;
+            }
+
+            .menu-top {}
+
+            .menu-main>ul>li>a {
+                width: 120px;
+                text-align: left;
+                background-color: gainsboro;
+                top: 0;
+                left: 0;
+                position: relative;
+            }
+
+            .sub {
+                width: 120px;
+                text-indent: 20px;
+                text-align: left;
+            }
+
+        }

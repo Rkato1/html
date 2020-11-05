@@ -1,0 +1,95 @@
+@charset "UTF-8"
+
+   .container{
+      width: 100%;
+      height: 1875px;
+      
+   }
+   .find-mem-wrap{
+      max-width: 570px;
+      min-width: 320px;
+      height: 1628px;
+      padding-top: 70px;
+      margin: 0 auto;
+      margin-top: 100px;
+      text-align: center;
+     
+   }
+   .join-form{
+      width: 100%;
+      height: 1450px;
+      border: 1px solid lightgray;
+   }
+   .join-img{
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+   }
+   .join-img img{
+      width: 200px;
+      height: 180px;
+   }
+   .join-img~p{
+      color:lightgray;
+   }
+   .agree-form{
+    width: 100%;
+      height: 300px;
+      text-align: left;
+      padding: 20px;
+   }
+   #first{
+      border-top: 1px solid lightgray;
+      box-sizing: border-box;
+   }
+   h3{
+      width: 450px;
+      margin: 0px;
+      float: left;
+   }
+   .scroll-agree{
+      width: 530px;
+      height: 200px;
+      border: 1px solid lightgray;
+      box-sizing: border-box;
+   }
+   .glyphicon{
+      width: 30px;
+      height: 30px;
+      float: left;
+      text-align: center;
+      font-size: 30px;
+      line-height: 30px;
+   }
+   .agree-form-email{
+      width: 100%;
+      height: 150px;
+      text-align: left;
+      padding: 20px;
+   }
+   .agree-form-email p{
+      width: 500px;
+   }
+   #notice{
+      height: 250px;
+   }
+   .next-chap{
+      width: 95%;
+      height: 180px;
+      margin: 10px;
+      margin: 0 auto;
+      border: 1px solid lightgray;
+   }
+   .btn-default{
+      width: 150px;
+      height: 60px;
+      margin: 50px;
+      background-color: chocolate;
+   }
+   form{
+      float: left;
+      width: 50%;
+   }
+   input[type=checkbox]{
+      display: none;
+   }

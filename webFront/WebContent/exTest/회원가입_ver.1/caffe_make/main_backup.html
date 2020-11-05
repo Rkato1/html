@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>responsiveweb_exam.html</title>
+	<!-- 헤더/부분 부트스트랩 시작 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- 헤더/부분 부트스트랩 종료 -->
+
+	<!-- 메인부분 부트스트랩 시작 -->
+	<!-- 이미지 넘기기 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<!-- 메인부분 부트스트랩 종료 -->
+
+
+	<style>
+		.jumbotron {
+			margin: 0;
+		}
+
+		.menu {
+			background-color: #848484;
+
+		}
+
+		.menu>div>a {
+			display: block;
+			text-decoration: none;
+			color: #fff;
+		}
+
+		.menu>div>a:hover {
+			background-color: #333333;
+		}
+
+		/*------------- main 부분 시작-------------------*/
+		#menuImg>div {
+			padding: 0;
+			margin: 0 auto;
+		}
+	
+		#menuImg span{
+			color: green;
+			font-size: 20px;
+		}
+
+		#remoCon {
+			position: fixed;
+			right: 80vh;
+			top: 200px;
+			margin-right: -720px;
+			text-align: center;			
+			width: 120px;
+			height: 360px;		
+			z-index: 999;
+			display: flex;
+			background-color: #fff;
+			
+		}
+		.remo{			
+			box-sizing: border-box;
+			width: 100%;
+			height: calc(100%/3);
+			
+		}
+		.remo>a{
+			width: 100%;
+			height: 100%;
+			display: block;
+			text-decoration: none;
+			color: #000;
+		}
+		.remo img{
+			width:100%;
+			height: 80%;
+		}
+		.remo:hover{
+			border: 1px solid blue;
+		}			
+		/*------------- main 부분 -------------------*/
+	</style>		
+</head>
+
+<body>
+	<!-- jumbotron:회색디자인클래스 text-center:가운데 정렬 -->
+	<div class="jumbotron text-center">
+		<h1>Responsive Web</h1>
+	</div>
+	<div class="row menu">
+		<div class="col-md-4 col-lg-1 text-center"><a href="#">Home</a></div>
+		<div class="col-md-4 col-lg-1 text-center"><a href="#">Service</a></div>
+		<div class="col-md-4 col-lg-1 text-center"><a href="#">About</a></div>
+	</div>
+	<!-- container:자체적으로 가운데 정렬지원 -->
+	<div class="container-fluid" style="padding: 0">
+		
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+			<!-- carousel 내부 이미지 리스트 부분 -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+			<!-- carousel 내부 이미지 부분 -->
+			<!-- Wrapper for slides -->
+
+			<div class="carousel-inner">
+				<div class="item active">
+					<a href="#"><img src="mainImg/mainImg01.jpg" alt="mainImg01" style="width:100%;"></a>
+				</div>
+
+				<div class="item">
+					<a href="#"><img src="mainImg/mainImg02.jpg" alt="mainImg02" style="width:100%;"></a>
+				</div>
+
+				<div class="item">
+					<a href="#"><img src="mainImg/mainImg03.jpg" alt="mainImg03" style="width:100%;"></a>
+				</div>
+				
+				<div class="item">
+					<a href="#"><img src="mainImg/mainImg04.jpg" alt="mainImg04" style="width:100%;"></a>
+				</div>
+			</div>
+
+			<!-- carousel 왼쪽 오른쪽 부분 -->
+			<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+		<hr>
+		<!-- 이미지 메뉴 부분 -->
+		<div class="row text-center" id="menuImg">
+			<div class="col-md-4 col-sm-4"><a href="#"><span>음료</span><img src="mainImg/drinkIcon(1200x600)-green.jpg" style="width:100%;"></a></div>
+			<div class="col-md-4 col-sm-4"><a href="#"><span>음식</span><img src="mainImg/eatIcon2(1200x600)-green.jpg" style="width:100%;"></a></div>
+			<div class="col-md-4 col-sm-4"><a href="#"><span>상품</span><img src="mainImg/productIcon(1200x600)-green.jpg" style="width:100%;"></a>
+			</div>
+		</div>
+		<hr>
+	</div>
+	<!-- 리모콘 부분 -->
+	<div class="row" id="remoCon">
+		<div class="remo"><a href="#"><span>홈페이지</span><img src="mainImg/heder-home-1.jpg" style="width: 100%;"></a></div>
+		<div class="remo"><a href="#"><span>회원가입</span><img src="mainImg/heder-join-1.jpg" style="width: 100%;"></a></div>
+		<div class="remo"><a href="#"><span>로그인</span><img src="mainImg/heder-login-1.jpg" style="width: 100%;"></a></div>		
+	</div>
+
+
+	<footer class="py-5 bg-dark">
+		<p class="m-0 text-center text-white">Copyright &copy Lee2020</p>
+	</footer>
+
+
+
+
+
+
+
+
+
+</body></html>
